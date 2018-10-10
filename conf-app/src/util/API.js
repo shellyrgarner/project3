@@ -7,7 +7,7 @@ export default {
     },
 
     getSession: function(id) {
-        return axios.get("/api/conferences/session" + id)
+        return axios.get("/api/conferences/schedule" + id)
     },
 
 
