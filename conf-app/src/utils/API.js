@@ -2,11 +2,11 @@ import axios from "axios";
 
 export default {
 
-    getConf: function() {
+    getConferences: function() {
         return axios.get("/api/conferences")
     },
 
-    getSession: function(id) {
+    getConference: function(id) {
         return axios.get("/api/conferences/schedule" + id)
     },
 

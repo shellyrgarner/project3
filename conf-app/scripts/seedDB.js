@@ -8,16 +8,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3");
 const confSeed = [
     {
         event: "Test",
-        beginDate: "",
-        endDate: "",
-        venue: "",
-        location: "",
-        info: ""
+        beginDate: new Date(Date.now()),
+        endDate: new Date(Date.now()),
+        venue: "test",
+        location: "test",
+        info: "test"
 }];
 
 db.Conference
 .remove({})
-.then(() => db.Conference.collection.inserMany(confSeed))
+.then(() => db.Conference.collection.insertMany(confSeed))
 .then(data => {
     console.log(data.result.n + 'records inserted!' );
     process.exit(0);
