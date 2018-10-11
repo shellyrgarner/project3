@@ -22,7 +22,7 @@ render() {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-                <h1>Coming Soon</h1>
+                <h1>Keep track of your schedule</h1>
             </Jumbotron>
           </Col>
         </Row>
