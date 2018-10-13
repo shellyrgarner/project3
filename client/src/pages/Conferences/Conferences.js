@@ -1,89 +1,116 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-
-// import { Link } from "react-router-dom";
+import { List, ListItem } from "../../components/ConfList";
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Conferences extends Component {
-    state = {
-        conferences: [],
-        event: "",
-        venue: "",
-        location: "",
-        info: ""
-    };
+  state = {
+    conferences: [],
+    event: "",
+    venue: "",
+    location: "",
+    info: ""
+  };
 
-    componentDidMount() {
-        this.loadConferences();
+  componentDidMount() {
+    this.loadConferences();
+  }
+
+  loadConferences = () => {
+    API.getConferences()
+      .then(res =>
+        this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "" })
+      )
+      .catch(err => console.log("getConf: " + err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.event && this.state.location) {
+      API.postConference({
+        event: this.state.event,
+        venue: this.state.venue,
+        location: this.state.location,
+        info: this.state.location
+      })
+        .then(res => this.loadConferences())
+        .catch(err => console.log("handleformsubmitERROR: " + err));
     }
+  };
 
-    loadConferences = () => {
-        API.getConferences()
-        .then(res =>
-        this.setState({ conferences: res.data, event: "", venue: "", location: "", info: ""})
-        )
-        .catch(err => console.log(err));
-    };
 
-    
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Find Your Conference</h1>
             </Jumbotron>
-        
-           {/* <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-           </form>*/}
-          </Col>
-          {/* <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.conferences.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {this.state.conferences.map(conference => (
+                  <ListItem key={conference._id}>
+                    <Link to={"/conferences/" + conference._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {conference.event}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col> */}
+                <h3>No Results to Display</h3>
+              )}
+          </Col>
+          <Col size="md-6 sm-12">
+            <Jumbotron>
+              <h1>Add A Conference</h1>
+            </Jumbotron>
+            <form>
+              <Input
+                value={this.state.event}
+                onChange={this.handleInputChange}
+                name="event"
+                placeholder="Event (required)"
+              />
+              <Input
+                value={this.state.venue}
+                onChange={this.handleInputChange}
+                name="venue"
+                placeholder="Venue (Please add 'TBD' if not confirmed yet.)"
+              />
+              <TextArea
+                value={this.state.location}
+                onChange={this.handleInputChange}
+                name="location"
+                placeholder="Location (City/State - required)"
+              />
+              <TextArea
+                value={this.state.info}
+                onChange={this.handleInputChange}
+                name="info"
+                placeholder="Info (Please add description of event)"
+              />
+              <FormBtn
+                disabled={!(this.state.event && this.state.location)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit Event
+              </FormBtn>
+            </form>
+          </Col>
         </Row>
       </Container>
     );
