@@ -7,13 +7,15 @@ import Conferences from "./pages/Conferences";
 import Schedule from "./pages/Schedule";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Login from "./pages/Login";
 
 const App = () => (
   <Router>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Conferences} />
+  
+        <Route exact path="/" component={Login} />
         <Route exact path="/conferences" component={Conferences} />
         <Route exact path="/conferences/schedule" component={Schedule} />
         <Route component={NoMatch} />

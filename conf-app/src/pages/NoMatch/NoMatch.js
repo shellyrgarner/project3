@@ -7,12 +7,7 @@ const NoMatch = () => (
     <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>No Page Here...</h1>
-            <h1>
-                <span role="img" aria-label="Face with Rolling Eyes Emoji">
-                🙄
-                </span>
-            </h1>
+            <h1>Coming Soon</h1>
           </Jumbotron>
         </Col>
     </Row>
