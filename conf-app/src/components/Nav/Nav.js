@@ -32,7 +32,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar light expand="md">
-          <NavbarBrand href="/">Upcoming Conferences</NavbarBrand>
+          <NavbarBrand href="/">We Dont Have A Name Yet</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -43,7 +43,7 @@ export default class Example extends React.Component {
                 <NavLink href="/conferences/schedule">Schedule</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/nomatch">NoMatch</NavLink>
+                <NavLink href="/something">Something</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
