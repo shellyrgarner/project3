@@ -2,9 +2,9 @@ const router = require("express").Router();
 const confController = require("../../controllers/confController");
 
 //matches with "/api/conferences"
-//router.route("/")
-//.get(confController.findAll)
- //.post(confController.create);
+router.route("/")
+.get(confController.findAll)
+ .post(confController.create);
 
 //matches with "/api/conferences/schedule"
 //router
