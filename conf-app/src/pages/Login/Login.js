@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "./login.css";
 
 
 
-class Login extends Component {
+class Login extends React.Component {
 
-    );
+    render() {
+        return (
+            <h1>Login Page</h1>
+        )
+    }
+};
     
-    //AppRegistry.registerComponent('ProximateRN', () => SimpleApp);
 
 export default Login;
