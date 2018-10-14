@@ -4,7 +4,7 @@ module.exports = {
     findAll: function (req, res) {
         db.Conference
             .find(req.query)
-            .sort({ begDate: -1 })
+            .sort({ beginDate: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
         console.log("findAll req.query data:" + (JSON.stringify(req.query)));

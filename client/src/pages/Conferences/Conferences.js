@@ -12,7 +12,9 @@ class Conferences extends Component {
     event: "",
     venue: "",
     location: "",
-    info: ""
+    info: "",
+    beginDate: "",
+    endDate: ""
   };
 
   componentDidMount() {
@@ -22,7 +24,7 @@ class Conferences extends Component {
   loadConferences = () => {
     API.getConferences()
       .then(res =>
-        this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "" })
+        this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
       )
       .catch(err => console.log("getConf ERROR: " + err));
   };
@@ -39,6 +41,8 @@ class Conferences extends Component {
     if (this.state.event && this.state.location) {
       API.postConference({
         event: this.state.event,
+        beginDate: this.state.beginDate,
+        endDate: this.state.endDate,
         venue: this.state.venue,
         location: this.state.location,
         info: this.state.info
@@ -84,6 +88,18 @@ class Conferences extends Component {
                 onChange={this.handleInputChange}
                 name="event"
                 placeholder="Event (required)"
+              />
+              <Input
+                value={this.state.beginDate}
+                onChange={this.handleInputChange}
+                name="beginDate"
+                placeholder="dd/mm/yyyy"
+              />
+              <Input
+                value={this.state.endDate}
+                onChange={this.handleInputChange}
+                name="endDate"
+                placeholder="dd/mm/yyyy"
               />
               <Input
                 value={this.state.venue}
