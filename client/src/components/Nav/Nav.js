@@ -40,10 +40,10 @@ export default class Example extends React.Component {
                 <NavLink href="/conferences">Conferences</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/conferences/schedule">Schedule</NavLink>
+                <NavLink href="/conferences/:id">Schedule</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/something">Something</NavLink>
+                <NavLink href="/conferences/traveltips">Travel Tips</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -51,14 +51,14 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Your Profile
+                    <NavLink href="/conferences/profile">Your Profile</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    Settings
+                  <NavLink href="/conferences/settings">Settings</NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
-                    Sign Out
+                  <DropdownItem >
+                  <NavLink href="/">Sign Out</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

@@ -1,20 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "./login.css";
 
 
 
-class Login extends Component {
+class Login extends React.Component {
 
-    render()
-    {
-        return(
-            <div>
-                <h1>Login coming eventually</h1>
-            </div>
+    render() {
+        return (
+            <h1>Login Page</h1>
         )
     }
+};
     
-
-}
 
 export default Login;
