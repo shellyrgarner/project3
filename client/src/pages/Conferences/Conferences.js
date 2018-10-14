@@ -24,7 +24,7 @@ class Conferences extends Component {
       .then(res =>
         this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "" })
       )
-      .catch(err => console.log("getConf: " + err));
+      .catch(err => console.log("getConf ERROR: " + err));
   };
 
   handleInputChange = event => {
@@ -41,10 +41,10 @@ class Conferences extends Component {
         event: this.state.event,
         venue: this.state.venue,
         location: this.state.location,
-        info: this.state.location
+        info: this.state.info
       })
         .then(res => this.loadConferences())
-        .catch(err => console.log("handleformsubmitERROR: " + err));
+        .catch(err => console.log("handleformsubmit ERROR: " + err));
     }
   };
 
@@ -91,11 +91,11 @@ class Conferences extends Component {
                 name="venue"
                 placeholder="Venue (Please add 'TBD' if not confirmed yet.)"
               />
-              <TextArea
+              <Input
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location (City/State - required)"
+                placeholder="Location (City/State-Required)"
               />
               <TextArea
                 value={this.state.info}
