@@ -5,6 +5,7 @@ import { List, ListItem } from "../../components/ConfList";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Hero from "../../components/Hero";
 
 class Conferences extends Component {
   state = {
@@ -53,31 +54,9 @@ class Conferences extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Find Your Conference</h1>
-            </Jumbotron>
-            {this.state.conferences.length ? (
-              <List>
-                {this.state.conferences.map(conference => (
-                  <ListItem key={conference._id}>
-                    <Link to={"/conferences/" + conference._id}>
-                      <strong>
-                        {conference.event}
-                      </strong>
-                    </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )}
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
+          
+            <Hero>
               <h1>Add A Conference</h1>
-            </Jumbotron>
             <form>
               <Input
                 value={this.state.event}
@@ -110,6 +89,28 @@ class Conferences extends Component {
                 Submit Event
               </FormBtn>
             </form>
+            </Hero>
+         
+          </Row>
+          <Row>
+          <Col size="md-6 sm-12">
+
+            {this.state.conferences.length ? (
+              <List>
+                {this.state.conferences.map(conference => (
+                  <ListItem key={conference._id}>
+                    <Link to={"/conferences/" + conference._id}>
+                      <strong>
+                        {conference.event}
+                      </strong>
+                    </Link>
+                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
