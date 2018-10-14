@@ -16,6 +16,7 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
             console.log("findById req.params.id data: " + req.params.id);
+            console.log("create req.body data: " + (JSON.stringify(req.body)));
             //console.log("findById ERROR: " + err);
     },
     //NOTE: this isn't doing the right thing yet. probably need to look at mongoose documentation and figure 
