@@ -63,7 +63,7 @@ class SignUp extends Component {
                             type="password"
                         />
                     </FormGroup>
-                    <Button
+                    <Button href="/conferences"
                         blockb
                         bsSize="large"
                         disabled={!this.validateForm()}

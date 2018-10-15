@@ -18,10 +18,10 @@ class App extends Component {
 
       <Router>
         <div>
-          <Nav />
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/signup" component={SignUp} />
+            <Nav />
             <Route exact path="/conferences" component={Conferences} />
             <Route exact path="/conferences/:id" component={Schedule} />
             <Route exact path="/conferences/traveltips" component={TravelTips} />

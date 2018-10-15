@@ -54,7 +54,7 @@ class Login extends Component {
                             type="password"
                         />
                     </FormGroup>
-                    <Button
+                    <Button href="/confrences"
                         blockb
                         bsSize="large"
                         disabled={!this.validateForm()}
@@ -62,7 +62,7 @@ class Login extends Component {
                     >
                         Login
                 </Button>
-                <Button
+                <Button href="/signup"
                         blockb
                         bsSize="large"
                         type="submit"
