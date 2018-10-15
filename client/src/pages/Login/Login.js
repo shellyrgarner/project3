@@ -12,7 +12,7 @@ class Login extends Component {
         this.state = {
             email: "",
             password: ""
-            
+
         };
     }
 
@@ -34,42 +34,43 @@ class Login extends Component {
     render() {
 
         return (
-
-            <div className="Login">
-                <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="larger">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                        />
-                    </FormGroup>
-                    <Button href="/confrences"
-                        blockb
-                        bsSize="large"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        Login
+            <div className="logo">
+                <div className="Login">
+                    <form onSubmit={this.handleSubmit}>
+                        <FormGroup controlId="email" bsSize="large">
+                            <ControlLabel>Email</ControlLabel>
+                            <FormControl
+                                autoFocus
+                                type="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup controlId="password" bsSize="larger">
+                            <ControlLabel>Password</ControlLabel>
+                            <FormControl
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                                type="password"
+                            />
+                        </FormGroup>
+                        <Button href="/confrences"
+                            blockb
+                            bsSize="large"
+                            disabled={!this.validateForm()}
+                            type="submit"
+                        >
+                            Login
                 </Button>
-                <Button href="/signup"
-                        blockb
-                        bsSize="large"
-                        type="submit"
-                    >
-                        Sign Up
+                        <Button href="/signup"
+                            blockb
+                            bsSize="large"
+                            type="submit"
+                        >
+                            Sign Up
                 </Button>
-                </form>
+                    </form>
+                </div>
             </div>
         );
     }

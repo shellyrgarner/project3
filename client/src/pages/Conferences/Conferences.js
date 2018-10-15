@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/ConfList";
 import { Link } from "react-router-dom";
