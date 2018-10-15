@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./login.css";
+import "./signup.css";
 
 
-class Login extends Component {
+class SignUp extends Component {
 
 
     constructor(props) {
         super(props);
 
         this.state = {
+            name: "",
             email: "",
             password: ""
-            
         };
     }
 
     validateForm() {
-        return this.state.email.length > 0 && this.state.password.length > 0;
+        return this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
     }
 
     handleChange = event => {
@@ -35,13 +35,22 @@ class Login extends Component {
 
         return (
 
-            <div className="Login">
+            <div className="SignUp">
                 <form onSubmit={this.handleSubmit}>
+                    <FormGroup controlId="name" bsSize="large">
+                        <ControlLabel>Name</ControlLabel>
+                        <FormControl
+                            autoFocus
+                            type="Name"
+                            value={this.state.name}
+                            onChange={this.handleChange}
+                        />
+                    </FormGroup>
                     <FormGroup controlId="email" bsSize="large">
                         <ControlLabel>Email</ControlLabel>
                         <FormControl
                             autoFocus
-                            type="email"
+                            type="Email"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
@@ -60,14 +69,7 @@ class Login extends Component {
                         disabled={!this.validateForm()}
                         type="submit"
                     >
-                        Login
-                </Button>
-                <Button
-                        blockb
-                        bsSize="large"
-                        type="submit"
-                    >
-                        Sign Up
+                        SignUp
                 </Button>
                 </form>
             </div>
@@ -77,4 +79,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default SignUp;
