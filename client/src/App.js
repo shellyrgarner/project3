@@ -13,20 +13,22 @@ import Settings from "./pages/Settings";
 
 class App extends Component {
 
+
+
   render() {
     return (
 
       <Router>
         <div>
+            <Nav />
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/signup" component={SignUp} />
-            <Nav />
             <Route exact path="/conferences" component={Conferences} />
             <Route exact path="/conferences/:id" component={Schedule} />
-            <Route exact path="/conferences/traveltips" component={TravelTips} />
-            <Route exact path="/conferences/profile" component={Profile} />
-            <Route exact path="/conferences/settings" component={Settings} />
+            <Route exact path="/traveltips" component={TravelTips} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/settings" component={Settings} />
           </Switch>
         </div>
       </Router>
