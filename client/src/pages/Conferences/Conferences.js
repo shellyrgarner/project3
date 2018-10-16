@@ -9,22 +9,31 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 class Conferences extends Component {
   state = {
     conferences: [],
-    event: "",
-    venue: "",
-    location: "",
-    info: "",
-    beginDate: "",
-    endDate: ""
+    // event: "",
+    // venue: "",
+    // location: "",
+    // info: "",
+    // beginDate: "",
+    // endDate: ""
   };
 
   componentDidMount() {
     this.loadConferences();
   }
 
+  scrape = () => {
+    API.scrapeConferences()
+      .then(res => {
+        console.log("scrape res data: " + res)
+         this.loadConferences()
+      });
+  }
+
   loadConferences = () => {
     API.getConferences()
       .then(res =>
-        this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
+        // this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
+        this.setState({ conferences: [...res.data] })
       )
       .catch(err => console.log("getConf ERROR: " + err));
   };

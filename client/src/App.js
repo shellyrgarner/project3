@@ -7,6 +7,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
 import Details from "./pages/Details";
+import NotFound from "./pages/NotFound";
 
 const App = () => (
   <Router>
@@ -15,9 +16,11 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/conferences" component={Conferences} />
+        {/* <Route exact path="/scrapedconferences" component={Conferences} /> */}
         <Route exact path="/conferences/schedule" component={Schedule} />
         <Route exact path="/conferences/:id" component={Details} />
-        <Route component={NoMatch} />
+        <Route exact path="/something" component={NoMatch} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   </Router>
