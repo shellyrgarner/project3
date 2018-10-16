@@ -3,7 +3,8 @@ import axios from "axios";
 export default {
 
     scrapeConferences: function () {
-        return axios.get("/api/scrapedconferences");
+        // return axios.get("/api/scrapedconferences");
+        return axios.get("/api/conferences");
     },
     getConferences: function () {
         return axios.get("/api/conferences");

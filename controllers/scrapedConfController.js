@@ -3,9 +3,10 @@ const scrape = require("../scripts/scrape");
 
 module.exports = {
     scrapeConferences: function(req, res) {
-        return scrape().then(function(conferences) {
-            return db.Conference.create(conferences);
-            console.log("scraped conf: " + conferences);
+        return scrape().then(function(scrapedConf) {
+            console.log('scraping');
+            return db.Conference.create(scrapedConf);
+            console.log("scraped conf: " + scrapedConf);
         })
         .then(function(dbConf) {
             if(dbConf.length === 0) {
