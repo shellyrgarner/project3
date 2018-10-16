@@ -1,10 +1,10 @@
-import React from "react";
+import React, {Component} from "react";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 
 
 
-class Profile extends React.Component {
+class Profile extends Component {
 
     render() {
         return (
