@@ -1,15 +1,11 @@
 
-.logo {
-  background-image: url("/client/src/images/Convene\ Logo.png");
-}
 
 @media all and (min-width: 480px) {
-    .Login {
+    .SignUp {
       padding: 160px 0;
     }
-
   
-    .Login form {
+    .SignUp form {
       margin: 0 auto;
       max-width: 320px;
     }

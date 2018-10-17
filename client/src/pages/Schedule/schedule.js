@@ -2,18 +2,18 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
-//import API from "../../utils/API";
+import API from "../../utils/API";
 
 class Schedule extends Component {
-    // state = {
-    //     conferences: {}
-    // };
+    state = {
+        conferences: {}
+    };
 
-    // componentDidMount() {
-    //     API.getConference(this.props.match.params.id)
-    //     .then(res => this.setState({ conference: res.data }))
-    //     .catch(err => console.log(err));
-    // }
+    componentDidMount() {
+        API.getConference(this.props.match.params.id)
+        .then(res => this.setState({ conference: res.data }))
+        .catch(err => console.log(err));
+    }
 
 
 render() {
