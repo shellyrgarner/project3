@@ -1,6 +1,11 @@
 import axios from "axios";
 
 export default {
+
+    scrapeConferences: function () {
+        // return axios.get("/api/scrapedconferences");
+        return axios.get("/api/conferences");
+    },
     getConferences: function () {
         return axios.get("/api/conferences");
     },
@@ -15,10 +20,10 @@ export default {
         return axios({
             method: 'post',
             url: '/api/conferences',
-            data: incomingData           
+            data: incomingData
         });
-        
+
     }
     //console.log("srcAPIfile_incomingDate: " + incomingData);
-    
+
 };

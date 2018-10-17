@@ -10,27 +10,35 @@ const confSeed = [
         event: "Test",
         venue: "test",
         location: "test",
-        info: "test",
-        beginDate: new Date(Date.now()),
-        endDate: new Date(Date.now()),
-},
-{
-    event: "Test Event 2",
-    venue: "test venue",
-    location: "test location",
-    info: "test about the test",
-    beginDate: new Date(Date.now()),
-    endDate: new Date(Date.now()),
-}];
+        info: "test event",
+        beginDate: new Date("2018-11-01"),
+        endDate: new Date("2018-11-04"),
+    },
+    {
+        event: "Test Event 2",
+        venue: "test venue",
+        location: "test location",
+        info: "test about the test",
+        beginDate: new Date("2019-01-11"),
+        endDate: new Date("2019-01-14"),
+    },
+    {
+        event: "Test Event 3",
+        venue: "test venue",
+        location: "Atlanta",
+        info: "test about the test 3",
+        beginDate: new Date("2018-12-14"),
+        endDate: new Date("2018-12-16"),
+    }];
 
 db.Conference
-.remove({})
-.then(() => db.Conference.collection.insertMany(confSeed))
-.then(data => {
-    console.log(data.result.n + ' records inserted!' );
-    process.exit(0);
-})
-.catch(err => {
-    console.error(err);
-    process.exit(1);
-});
+    .remove({})
+    .then(() => db.Conference.collection.insertMany(confSeed))
+    .then(data => {
+        console.log(data.result.n + ' records inserted!');
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });

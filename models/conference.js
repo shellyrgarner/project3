@@ -6,8 +6,10 @@ const confSchema = new Schema({
     venue:  String,
     location:  { type: String, required: true},
     info: String,
-    begDate: { type: Date, default: Date.now },
-    endDate: { type: Date, default: Date.now },
+    beginDate: { type: String, default: Date.now },
+    //beginDate: { $dateToString: {format: "%Y-%m-%d", date: "$date"} },
+    endDate: { type: String, default: Date.now },
+    //endDate: { $dateToString: {format: "%Y-%m-%d", date: "$date"} }
 });
 
 const Conference = mongoose.model("Conference", confSchema);
