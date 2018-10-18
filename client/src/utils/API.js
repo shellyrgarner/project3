@@ -5,7 +5,7 @@ export default {
     getFlightsData: function(url) {
         return axios.get(url, {
           headers: {
-           "Content-Type": 'application/json',
+            "Content-Type": 'application/json',
             Authorization: `Bearer ${process.env.SABRE_TOKEN}`
           }
         });
