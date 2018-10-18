@@ -1,6 +1,16 @@
 import axios from "axios";
 
 export default {
+
+    getFlightsData: function(url) {
+        return axios.get(url, {
+          headers: {
+           "Content-Type": 'application/json',
+            Authorization: `Bearer ${process.env.SABRE_TOKEN}`
+          }
+        });
+    },
+
     getConferences: function () {
         return axios.get("/api/conferences");
     },
