@@ -1,12 +1,16 @@
 import axios from "axios";
+require ("dotenv").config();
 
 export default {
 
     getFlightsData: function(url) {
+        let authString = `Bearer ${process.env.REACT_APP_SABRE_TOKEN}`;
+        console.log(authString)
+        console.log(process.env)
         return axios.get(url, {
           headers: {
             "Content-Type": 'application/json',
-            Authorization: `Bearer ${process.env.SABRE_TOKEN}`
+            Authorization: `Bearer ${process.env.REACT_APP_SABRE_TOKEN}`
           }
         });
     },
