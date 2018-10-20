@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 
 class DropDownAirports extends Component {
 
@@ -13,7 +13,7 @@ class DropDownAirports extends Component {
     componentDidMount() {
         
         let initialData = [];
-        fetch("client\src\pages\TravelTips\airports.json")
+        axios.get("http://localhost/3001/client/src/pages/traveltips/airports.json")
             .then(response => {
                 return response.JSON();
             }).then(data => {
