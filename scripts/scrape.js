@@ -5,7 +5,7 @@ const scrape = function () {
 
     return axios.get("http://www.allconferences.com/Computers/").then(function (res) {
         const $ = cheerio.load(res.data);
-        console.log("scrape res.data: " + res.data);
+        // console.log("scrape res.data: " + res.data);
 
         const scrapedConf = [];
 
@@ -38,7 +38,7 @@ const scrape = function () {
             }
         });
         return scrapedConf;
-        console.log("scraped conferences: " + scrapedConf);
+        // console.log("scraped conferences: " + scrapedConf);
     });
 };
 

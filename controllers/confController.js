@@ -7,7 +7,7 @@ module.exports = {
             .sort({ beginDate: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-        console.log("findAll req.query data:" + (JSON.stringify(req.query)));
+        // console.log("findAll req.query data:" + (JSON.stringify(req.query)));
         //console.log("findAll ERROR:" + err);
     },
     findById: function (req, res) {
@@ -15,8 +15,8 @@ module.exports = {
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-            console.log("findById req.params.id data: " + req.params.id);
-            console.log("create req.body data: " + (JSON.stringify(req.body)));
+            // console.log("findById req.params.id data: " + req.params.id);
+            // console.log("create req.body data: " + (JSON.stringify(req.body)));
             //console.log("findById ERROR: " + err);
     },
     //NOTE: this isn't doing the right thing yet. probably need to look at mongoose documentation and figure 
@@ -27,7 +27,7 @@ module.exports = {
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-            console.log("create req.body data: " + (JSON.stringify(req.body)));
+            // console.log("create req.body data: " + (JSON.stringify(req.body)));
         //console.log("create ERROR: " + err);
     },
     update: function(req, res) {

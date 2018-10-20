@@ -1,4 +1,6 @@
+
 import React, { Component } from "react";
+import axios from 'axios';
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/ConfList";
@@ -7,6 +9,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Conferences extends Component {
+ 
   state = {
     conferences: [],
     // event: "",
@@ -19,21 +22,38 @@ class Conferences extends Component {
 
   componentDidMount() {
     this.loadConferences();
+    // this.scrape();
   }
+  
+//*********add a button to scrape-search conference button*****//
 
-  scrape = () => {
-    API.scrapeConferences()
-      .then(res => {
-        console.log("scrape res data: " + res)
-         this.loadConferences()
-      });
-  }
+  // scrape = () => {
+  //   API.scrapeConferences()
+  //     .then(res => {
+  //       this.setState({ conferences: [...res.data] })
+  //       console.log("scrape res data: " + res.data)
+  //        //this.loadConferences()
+  //     });
+  // }
+
+  // async componentWillMount() {
+  //   try {
+  //     const res = await axios.get(`/api/scrapeConferences`);
+  //     this.setState({conferences: res.data })
+        
+  //     // console.log("hello scrape")
+  //     console.log(res.data + "this is scraping ")
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   loadConferences = () => {
     API.getConferences()
       .then(res =>
         // this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
         this.setState({ conferences: [...res.data] })
+        // console.log("load conf: " + res.data);
       )
       .catch(err => console.log("getConf ERROR: " + err));
   };
@@ -75,8 +95,10 @@ class Conferences extends Component {
                 {this.state.conferences.map(conference => (
                   <ListItem key={conference._id}>
                     <Link to={"/conferences/" + conference._id}>
+                    {/* <Link to={"/api/scrapeConferences/" + conference._id}>  */}
                       <strong>
                         {conference.event}
+
                       </strong>
                     </Link>
                     {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
