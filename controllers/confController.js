@@ -5,7 +5,7 @@ module.exports = {
         db.Conference
             .find(req.query)
             .sort({ beginDate: -1 })
-            .then(dbModel => res.json(dbModel))
+            .then(dbConf => res.json(dbConf))
             .catch(err => res.status(422).json(err));
         // console.log("findAll req.query data:" + (JSON.stringify(req.query)));
         //console.log("findAll ERROR:" + err);
@@ -13,7 +13,7 @@ module.exports = {
     findById: function (req, res) {
         db.Conference
             .findById(req.params.id)
-            .then(dbModel => res.json(dbModel))
+            .then(dbConf => res.json(dbConf))
             .catch(err => res.status(422).json(err));
             // console.log("findById req.params.id data: " + req.params.id);
             // console.log("create req.body data: " + (JSON.stringify(req.body)));
@@ -25,7 +25,7 @@ module.exports = {
     create: function (req, res) {
         db.Conference
             .create(req.body)
-            .then(dbModel => res.json(dbModel))
+            .then(dbConf => res.json(dbConf))
             .catch(err => res.status(422).json(err));
             // console.log("create req.body data: " + (JSON.stringify(req.body)));
         //console.log("create ERROR: " + err);
@@ -33,7 +33,7 @@ module.exports = {
     update: function(req, res) {
         db.Conference
         .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
+        .then(dbConf => res.json(dbConf))
         .catch(err => res.status(422).json(err))
         console.log("update req.body data: " + req.body);
         //console.log("update ERROR: " + err);
@@ -41,8 +41,8 @@ module.exports = {
     remove: function(req, res) {
         db.Conference
         .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
+        .then(dbConf => dbConf.remove())
+        .then(dbConf => res.json(dbConf))
         .catch(err => res.status(422).json(err));
         console.log("remove req.params.id data: " + req.params.id);
         //console.log("remove ERROR: " + err);

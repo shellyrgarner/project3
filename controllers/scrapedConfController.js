@@ -6,7 +6,7 @@ module.exports = {
         return scrape().then(function(scrapedConf) {
             // console.log('scraping');
             return db.Conference.create(scrapedConf);
-            // console.log("scraped conf: " + scrapedConf);
+             //console.log("scraped conf: " + scrapedConf);
         })
         .then(function(dbConf) {
             if(dbConf.length === 0) {
@@ -22,9 +22,7 @@ module.exports = {
             // console.log("scraped res: " + res)
         })
         .catch(function(err) {
-            res.json({
-                message: "Scrape complete!"
-            });
+            return response.json(err);
         });
     }
 };

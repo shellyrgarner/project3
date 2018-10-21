@@ -1,17 +1,21 @@
 
 import React, { Component } from "react";
-import axios from 'axios';
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/ConfList";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-
+import ScrapeBtn from "../../components/Button";
+//import cheerio from 'cheerio';
+// import scrapeConferences from "../../../../controllers/scrapedConfController";
+// import $ from 'jquery';
+// const cheerio = require("cheerio");
+//import axios from 'axios';
 class Conferences extends Component {
- 
+
   state = {
-    conferences: [],
+    conferences: []
     // event: "",
     // venue: "",
     // location: "",
@@ -22,41 +26,32 @@ class Conferences extends Component {
 
   componentDidMount() {
     this.loadConferences();
-    // this.scrape();
+    //  this.scrape();
   }
-  
-//*********add a button to scrape-search conference button*****//
 
-  // scrape = () => {
-  //   API.scrapeConferences()
-  //     .then(res => {
-  //       this.setState({ conferences: [...res.data] })
-  //       console.log("scrape res data: " + res.data)
-  //        //this.loadConferences()
-  //     });
-  // }
+  scrape = () => {
+    API.scrapeConferences()
+      .then(res => 
+        {
+          // this.setState({ conferences: [...res.data] })
+          this.loadConferences()
+          console.log("scrape function called: " + JSON.stringify(res.data))
 
-  // async componentWillMount() {
-  //   try {
-  //     const res = await axios.get(`/api/scrapeConferences`);
-  //     this.setState({conferences: res.data })
-        
-  //     // console.log("hello scrape")
-  //     console.log(res.data + "this is scraping ")
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
+        }
+      )
+  }
 
   loadConferences = () => {
     API.getConferences()
       .then(res =>
-        // this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
-        this.setState({ conferences: [...res.data] })
-        // console.log("load conf: " + res.data);
+        {
+          this.setState({ conferences: [...res.data] })
+          console.log(res.data);
+        }
       )
-      .catch(err => console.log("getConf ERROR: " + err));
-  };
+      .catch(err => console.log(err));
+  }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -89,13 +84,15 @@ class Conferences extends Component {
           <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Find Your Conference</h1>
+              <ScrapeBtn scrape={this.scrape} />
             </Jumbotron>
+
             {this.state.conferences.length ? (
               <List>
                 {this.state.conferences.map(conference => (
                   <ListItem key={conference._id}>
                     <Link to={"/conferences/" + conference._id}>
-                    {/* <Link to={"/api/scrapeConferences/" + conference._id}>  */}
+                      {/* <Link to={"/api/scrapeConferences/" + conference._id}>  */}
                       <strong>
                         {conference.event}
 
@@ -168,3 +165,58 @@ export default Conferences;
 
 
 
+ // scrape = () => {
+  //   return axios.get("http://www.allconferences.com/Computers/").then((res) =>  {
+  //     const $ = cheerio.load(res.data);
+  //     console.log("scraping" + JSON.stringify(res.data));
+
+  //     $(".listing_content").each((i, element) => {
+  //       const event = $(this).children(".conferenceHead").children("h2").children("a").text();
+  //       const url = $(this).children(".conferenceHead").children("h2").children("a").attr("href");
+  //       const venue = $(this).children(".conferenceHead").children(".venue_info").children("a").text();
+  //       const beginDate = $(this).children(".conferenceDate").children(".begin_txt").children("a").text();
+  //       const endDate = $(this).children(".conferenceDate").children(".end_txt").children("a").text();
+  //       const info = $(this).children(".conferenceDescription").children(".description").children(".filter_middle").children("a").text();
+  //       if (event && url && venue) {
+  //         const scrapedData = {
+  //           event: event,
+  //           url: url,
+  //           venue: venue,
+  //           beginDate: beginDate,
+  //           endDate: endDate,
+  //           info: info
+  //         };
+  //         console.log("scrapedData: " + scrapedData);
+  //           this.setState({ conferences: scrapedData });
+  //           console.log(this.state);
+  //       }
+
+  //     });
+  //   });
+  // };
+
+   //*********add a button to scrape-search conference button*****//
+
+  // scrape = () => {
+  //     return axios({
+  //     url: "http://www.allconferences.com/Computers/",
+  //     method: 'GET'
+  //   }).then((data) =>{
+  //     this.setState({ conferences: data })
+  //     console.log(this.state);
+  //     console.log(JSON.stringify(data) + "this is scraping ")
+  //   })
+
+
+  // async componentWillMount() {
+  //   try {
+  //     const res = await axios.get(`/api/scrapeconferences`);
+  //     this.setState({conferences: res.data })
+
+  //     // console.log("hello scrape")
+  //     console.log("this is scraping " + JSON.stringify(res.data));
+  //     console.log(this.state);
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
