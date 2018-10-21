@@ -22,7 +22,7 @@ module.exports = {
             // console.log("scraped res: " + res)
         })
         .catch(function(err) {
-            return response.json(err);
+            return res.json(err);
         });
     }
 };
