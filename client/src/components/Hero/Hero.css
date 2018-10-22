@@ -1,7 +1,9 @@
 .hero {
     /* Sizing */
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
+
     
     /* Flexbox stuff */
     display: flex;
@@ -50,9 +52,13 @@ h1,.h1 {
     /* Text styles */
     text-align: center;
     color: rgb(245, 236, 236) !important;
-    font-size: 100px;
+    /* font-size: 100px; */
+    font-size: 50px;
+
 }
 .list-group-item {
 background-color:transparent;
-font-size:50px !important;
+/* font-size:50px !important; */
+font-size:20px !important;
+
 }
