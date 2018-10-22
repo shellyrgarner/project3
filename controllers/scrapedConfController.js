@@ -4,9 +4,9 @@ const scrape = require("../scripts/scrape");
 module.exports = {
     scrapeConferences: function(req, res) {
         return scrape().then(function(scrapedConf) {
-            console.log('scraping');
+            // console.log('scraping');
             return db.Conference.create(scrapedConf);
-            console.log("scraped conf: " + scrapedConf);
+             //console.log("scraped conf: " + scrapedConf);
         })
         .then(function(dbConf) {
             if(dbConf.length === 0) {
@@ -19,12 +19,10 @@ module.exports = {
                     message: "Added " + dbConf.length + " new events!"
                 });
             }
-            console.log("scraped res: " + res)
+            // console.log("scraped res: " + res)
         })
         .catch(function(err) {
-            res.json({
-                message: "Scrape complete!"
-            });
+            return res.json(err);
         });
     }
 };

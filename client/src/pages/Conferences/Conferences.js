@@ -6,16 +6,12 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Hero from "../../components/Hero";
+import ScrapeBtn from "../../components/Button";
 
 class Conferences extends Component {
+
   state = {
-    conferences: [],
-    // event: "",
-    // venue: "",
-    // location: "",
-    // info: "",
-    // beginDate: "",
-    // endDate: ""
+    conferences: []
   };
 
   componentDidMount() {
@@ -25,19 +21,20 @@ class Conferences extends Component {
   scrape = () => {
     API.scrapeConferences()
       .then(res => {
-        console.log("scrape res data: " + res)
-         this.loadConferences()
-      });
+        this.loadConferences()
+        console.log("scrape function called: " + JSON.stringify(res.data))
+      }
+      )
   }
 
   loadConferences = () => {
     API.getConferences()
-      .then(res =>
-        // this.setState({ conferences: res.data, event: "", venue: "", location: "", info: "", beginDate: "", endDate: "" })
+      .then(res => {
         this.setState({ conferences: [...res.data] })
-      )
-      .catch(err => console.log("getConf ERROR: " + err));
-  };
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -67,9 +64,9 @@ class Conferences extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6 sm-12">
-            <Hero>
+            <Hero imgClass="hero-img1">
               <h1>Your Conferences</h1>
-
+              <ScrapeBtn scrape={this.scrape} />
               {this.state.conferences.length ? (
                 <List>
                   {this.state.conferences.map(conference => (
@@ -89,11 +86,16 @@ class Conferences extends Component {
             </Hero>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-6 sm-12">
-        
-              <h2>Add A Conference</h2>
-
+        <Container fluid>
+          <Jumbotron fluid>
+            <p></p>
+            <p className="text-center"></p>
+            <br></br>
+          </Jumbotron>
+        </Container>
+        <Hero imgClass="hero-img2">
+          <Col size="md-8" classes="ml-auto mr-auto ">
+            <h2>Add A Conference</h2>
             <form>
               <Input
                 value={this.state.event}
@@ -139,13 +141,10 @@ class Conferences extends Component {
               </FormBtn>
             </form>
           </Col>
-        </Row>
-      </Container>
+        </Hero>
+      </Container >
     );
   }
 }
 
 export default Conferences;
-
-
-
