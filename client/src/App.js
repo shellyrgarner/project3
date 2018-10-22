@@ -20,10 +20,9 @@ const App = () => (
         <Route exact path="/" component={Login} />
    <Route exact path="/signup" component={SignUp} />
         <Route exact path="/conferences" component={Conferences} />
-        {/* <Route exact path="/scrapeconferences" component={Conferences} /> */}
         <Route exact path="/conferences/schedule" component={Schedule} />
         <Route exact path="/conferences/:id" component={Details} />
-        <Route exact path="/something" component={NoMatch} />
+        {/* <Route exact path="/something" component={NoMatch} /> */}
    <Route exact path="/traveltips" component={TravelTips} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/settings" component={Settings} />
@@ -32,30 +31,5 @@ const App = () => (
     </div>
   </Router>
 );
-// class App extends Component {
-
-
-
-//   render() {
-//     return (
-
-//       <Router>
-//         <div>
-//             <Nav />
-//           <Switch>
-//             <Route exact path="/" component={Login} />
-//             <Route exact path="/signup" component={SignUp} />
-//             <Route exact path="/conferences" component={Conferences} />
-//             <Route exact path="/conferences/:id" component={Schedule} />
-//             <Route exact path="/traveltips" component={TravelTips} />
-//             <Route exact path="/profile" component={Profile} />
-//             <Route exact path="/settings" component={Settings} />
-//           </Switch>
-//         </div>
-//       </Router>
-//     )
-//   }
-
-// };
 
 export default App;
