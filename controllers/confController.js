@@ -5,7 +5,7 @@ module.exports = {
         db.Conference
             .find(req.query)
             .sort({ beginDate: -1 })
-            .limit(20)
+            // .limit(20)
             .then(dbConf => res.json(dbConf))
             .catch(err => res.status(422).json(err));
         // console.log("findAll req.query data:" + (JSON.stringify(req.query)));

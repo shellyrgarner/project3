@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const confSchema = new Schema({
-    event: { type: String, required: true },    
+    event: { type: String, required: true,  dropDups: true }, 
     venue:  String,
     location:  String,
     info: String,
