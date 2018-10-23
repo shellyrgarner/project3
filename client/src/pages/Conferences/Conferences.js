@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/ConfList";
+import Jumbotron from "../../components/Jumbotron";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
@@ -66,7 +67,7 @@ class Conferences extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6 sm-12">
-            <Hero>
+            <Hero imgClass="hero-img1">
               <h1>Your Conferences</h1>
 
               {this.state.conferences.length ? (
@@ -88,58 +89,76 @@ class Conferences extends Component {
             </Hero>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-6 sm-12">
-        
-              <h2>Add A Conference</h2>
+        <Container fluid>
+          
 
-            <form>
-              <Input
-                value={this.state.event}
-                onChange={this.handleInputChange}
-                name="event"
-                placeholder="Event (required)"
-              />
-              <Input
-                value={this.state.beginDate}
-                onChange={this.handleInputChange}
-                name="beginDate"
-                placeholder="dd/mm/yyyy"
-              />
-              <Input
-                value={this.state.endDate}
-                onChange={this.handleInputChange}
-                name="endDate"
-                placeholder="dd/mm/yyyy"
-              />
-              <Input
-                value={this.state.venue}
-                onChange={this.handleInputChange}
-                name="venue"
-                placeholder="Venue (Please add 'TBD' if not confirmed yet.)"
-              />
-              <Input
-                value={this.state.location}
-                onChange={this.handleInputChange}
-                name="location"
-                placeholder="Location (City/State-Required)"
-              />
-              <TextArea
-                value={this.state.info}
-                onChange={this.handleInputChange}
-                name="info"
-                placeholder="Info (Please add description of event)"
-              />
-              <FormBtn
-                disabled={!(this.state.event && this.state.location)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Event
+
+              <Jumbotron fluid>
+
+                <p></p>
+                <p className="text-center"></p>
+                <br></br>
+
+
+              </Jumbotron>
+          
+        </Container>
+
+        <Hero imgClass="hero-img2">
+
+        <Col size="md-8" classes="ml-auto mr-auto ">
+
+          <h2>Add A Conference</h2>
+
+          <form>
+            <Input
+              value={this.state.event}
+              onChange={this.handleInputChange}
+              name="event"
+              placeholder="Event (required)"
+            />
+            <Input
+              value={this.state.beginDate}
+              onChange={this.handleInputChange}
+              name="beginDate"
+              placeholder="dd/mm/yyyy"
+            />
+            <Input
+              value={this.state.endDate}
+              onChange={this.handleInputChange}
+              name="endDate"
+              placeholder="dd/mm/yyyy"
+            />
+            <Input
+              value={this.state.venue}
+              onChange={this.handleInputChange}
+              name="venue"
+              placeholder="Venue (Please add 'TBD' if not confirmed yet.)"
+            />
+            <Input
+              value={this.state.location}
+              onChange={this.handleInputChange}
+              name="location"
+              placeholder="Location (City/State-Required)"
+            />
+            <TextArea
+              value={this.state.info}
+              onChange={this.handleInputChange}
+              name="info"
+              placeholder="Info (Please add description of event)"
+            />
+            <FormBtn
+              disabled={!(this.state.event && this.state.location)}
+              onClick={this.handleFormSubmit}
+            >
+              Submit Event
               </FormBtn>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+          </form>
+        
+        </Col>
+        </Hero>
+       
+      </Container >
     );
   }
 }

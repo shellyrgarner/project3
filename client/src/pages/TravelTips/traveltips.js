@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import unirest from "unirest";
-import DropDownAirports from "../../components/DropDown";
+import { get } from "mongoose";
 
 class TravelTips extends Component {
 
@@ -48,15 +48,21 @@ class TravelTips extends Component {
       }.bind(this));
   }
 
+  searchResults() {
+    get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0")
+    .then(res => {
+      console.log(res);
+    })
+  }
+
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>Flights info</h1>
+              <h1>Test</h1>
             </Jumbotron>
-            <DropDownAirports />
           </Col>
         </Row>
       </Container>
