@@ -9,7 +9,7 @@ require("dotenv").config();
 
 console.log(process.env.REACT_APP_SABRE_TOKEN)
 
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 if(process.env.NODE_ENV === "production") {
