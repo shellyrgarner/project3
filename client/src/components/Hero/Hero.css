@@ -46,8 +46,13 @@
         display: block;
 
         margin-top: 50px !important;
-        margin-left: 10px;
+        
 }
+
+.hero-inner {
+    width: 500px;
+}
+
 h1,.h1 {    
     /* Text styles */
     text-align: center;
