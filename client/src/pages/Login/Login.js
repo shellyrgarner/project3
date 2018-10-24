@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./login.css";
+import Hero from "../../components/Hero";
 
 
 class Login extends Component {
@@ -34,44 +35,46 @@ class Login extends Component {
     render() {
 
         return (
-            <div className="logo">
-                <div className="Login">
-                    <form onSubmit={this.handleSubmit}>
-                        <FormGroup controlId="email" bsSize="large">
-                            <ControlLabel>Email</ControlLabel>
-                            <FormControl
-                                autoFocus
-                                type="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                        </FormGroup>
-                        <FormGroup controlId="password" bsSize="larger">
-                            <ControlLabel>Password</ControlLabel>
-                            <FormControl
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                                type="password"
-                            />
-                        </FormGroup>
-                        <Button href="/conferences"
-                            blockb
-                            bsSize="large"
-                            disabled={!this.validateForm()}
-                            type="submit"
-                        >
-                            Login
+            <Hero imgClass="hero-img3">
+                <div className="logo">
+                    <div className="Login">
+                        <form onSubmit={this.handleSubmit}>
+                            <FormGroup controlId="email" bsSize="lg">
+                                <ControlLabel>Email</ControlLabel>
+                                <FormControl
+                                    autoFocus
+                                    type="email"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="password" bsSize="lg">
+                                <ControlLabel>Password</ControlLabel>
+                                <FormControl
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                    type="password"
+                                />
+                            </FormGroup>
+                            <Button href="/conferences"
+                                blockb="true"
+                                bsSize="large"
+                                disabled={!this.validateForm()}
+                                type="submit"
+                            >
+                                Login
                 </Button>
-                        <Button href="/signup"
-                            blockb
-                            bsSize="large"
-                            type="submit"
-                        >
-                            Sign Up
+                            <Button href="/signup"
+                                blockb="true"
+                                bsSize="large"
+                                type="submit"
+                            >
+                                Sign Up
                 </Button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </Hero>
         );
     }
 
