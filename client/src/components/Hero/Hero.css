@@ -1,7 +1,7 @@
 .hero {
     /* Sizing */
-    width: 100vw;
-    height: 100vh;
+    width: 97vw;
+    height: 95vh;
     
     /* Flexbox stuff */
     display: flex;
@@ -54,6 +54,16 @@ h1,.h1 {
     color: rgb(245, 236, 236) !important;
     font-size: 100px;
 }
+h5{
+    text-align: center;
+    color:black !important;
+    font-size: 200px; 
+}
+h3{
+    text-align: center;
+    color:black !important;
+    font-size: 20px; 
+}
 .list-group-item {
 background-color:transparent;
 font-size:50px !important;
@@ -67,11 +77,15 @@ font-size:50px !important;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1516728043722-b394cb2f689e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c82882f6f384a30402cc75029d9e7b11&auto=format&fit=crop&w=2850&q=80);
     
 }
-.hero-img3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c035f34c035a8690da777211f1e66d59&auto=format&fit=crop&w=2850&q=80);
+.hero-img4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(https://images.unsplash.com/photo-1520865968438-dd8f6dbe79f4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=644da8acfa04265e5e0a98446643d254&auto=format&fit=crop&w=800&q=60);
     
 }
-hero-imgx {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1516728043722-b394cb2f689e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c82882f6f384a30402cc75029d9e7b11&auto=format&fit=crop&w=2850&q=80);
+.hero-img3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1523475894503-be2117952e76?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d67f49467abfdb291951240b175494d3&auto=format&fit=crop&w=800&q=60);
+    
+}
+.hero-img4c{
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c035f34c035a8690da777211f1e66d59&auto=format&fit=crop&w=2850&q=80);
     
 }

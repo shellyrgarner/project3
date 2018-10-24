@@ -1,0 +1,22 @@
+#content {
+    padding-top: 70px;
+    /* min-height: ~"calc(100vh - 92px)"; */
+  }
+  
+    .navbar
+    .navbar-default{
+    border-radius: 0 !important;
+    border-bottom: 40px;
+    margin: 20px 0 0;
+
+}
+body{
+    background-color: lightgray;
+}
+  
+    /* .copyright {
+      padding-top: @padding-small-horizontal / 2;
+      padding-bottom: @padding-small-horizontal; */
+    
+  
+  

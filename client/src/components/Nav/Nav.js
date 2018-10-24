@@ -32,10 +32,13 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar light expand="md">
-          <NavbarBrand href="#">CONVENE!</NavbarBrand>
+          <NavbarBrand href="#"><img src="nav-img1" alt="logo"/></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem>
+                <NavLink href="/login">Login</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink href="/conferences">Conferences</NavLink>
               </NavItem>

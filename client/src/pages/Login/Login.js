@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./login.css";
-import Hero from "../../components/Hero";
+import Hero from "../../components/Hero";   
+
+
 
 
 class Login extends Component {
@@ -37,7 +39,7 @@ class Login extends Component {
         return (
             <Hero imgClass="hero-img3">
                 <div className="logo">
-                    <div className="Login">
+                    <div className="Login"> 
                         <form onSubmit={this.handleSubmit}>
                             <FormGroup controlId="email" bsSize="large">
                                 <ControlLabel>Email</ControlLabel>
