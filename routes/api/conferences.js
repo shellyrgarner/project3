@@ -8,8 +8,7 @@ router.route("/")
 //console.log()
 
 //matches with "/api/conferences/:id"
-router
-    .route("/:id")
+router.route("/:id")
     .get(confController.findById)
     .put(confController.update)
     .delete(confController.remove);

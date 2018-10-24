@@ -5,7 +5,7 @@ const scrape = function () {
 
     return axios.get("http://www.allconferences.com/Computers/").then(function (res) {
         const $ = cheerio.load(res.data);
-        console.log("scrape res.data: " + res.data);
+        // console.log("scrape res.data: " + res.data);
 
         const scrapedConf = [];
 
@@ -18,7 +18,7 @@ const scrape = function () {
             const endDate = $(this).children(".conferenceDate").children(".end_txt").children("a").text();
             const info = $(this).children(".conferenceDescription").children(".description").children(".filter_middle").children("a").text();
             
-            if (event && url && venueInfo) {
+            if (event && url && venue) {
 
                 // const eventTrim = event.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
                 // const venueTrim = desc.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
@@ -28,7 +28,7 @@ const scrape = function () {
                     event: event,
                     url: url,
                     venue: venue,
-                    beginDate: begDate,
+                    beginDate: beginDate,
                     endDate: endDate,
                     info: info
                 };
@@ -38,7 +38,7 @@ const scrape = function () {
             }
         });
         return scrapedConf;
-        console.log("scraped conferences: " + scrapedConf);
+        // console.log("scraped conferences: " + scrapedConf);
     });
 };
 

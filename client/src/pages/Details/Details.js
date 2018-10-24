@@ -23,7 +23,7 @@ class Details extends Component {
                 <Row>
                     <Col size="md-12">
                         <Jumbotron>
-                            <h1>{this.state.conference.event}</h1>
+                            <h2>{this.state.conference.event}</h2>
                             <p>{this.state.conference.beginDate}-{this.state.conference.endDate}</p>
                         </Jumbotron>
                     </Col>

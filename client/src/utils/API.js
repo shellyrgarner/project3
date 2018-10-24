@@ -3,6 +3,14 @@ import axios from "axios";
 
 export default {
 
+    scrapeConferences: function () {
+        return axios.get("/api/scrapeconferences");
+        // return axios.get("/api/conferences");
+    },
+    getConferences: function () {
+        return axios.get("/api/conferences");
+    },
+
     // getFlightsData: function (url) {
     //     return axios.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/referral/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}/{inboundpartialdate}?apiKey={shortapikey}?shortapikey=ra66933236979928", {
     //         headers: {
@@ -12,6 +20,7 @@ export default {
     //         },
     //     });
     // },
+
 
 scrapeConferences: function () {
     // return axios.get("/api/scrapedconferences");
