@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 // require("dotenv").config();
 
-console.log(process.env.REACT_APP_SABRE_TOKEN)
+//console.log(process.env.REACT_APP_SABRE_TOKEN)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
