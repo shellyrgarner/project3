@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import RegisterBtn from "../../components/RegisterConfBtn";
 
 class Details extends Component {
     state = {
@@ -16,6 +17,22 @@ class Details extends Component {
             .then(res => this.setState({ conference: res.data }))
             .catch(err => console.log(err));
     }
+
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+        // if (this.state.event && this.state.location) {
+        //   API.postConference({
+        //     event: this.state.event,
+        //     beginDate: this.state.beginDate,
+        //     endDate: this.state.endDate,
+        //     venue: this.state.venue,
+        //     location: this.state.location,
+        //     info: this.state.info
+        //   })
+        //     .then(res => this.loadConferences())
+            // .catch(err => console.log("handleformsubmit ERROR: " + err));
+        // }
+      
 
     render() {
         return (
@@ -37,11 +54,18 @@ class Details extends Component {
                             <p>Details: {this.state.conference.info}</p>
                         </article>
                     </Col>
-                    <Row>
+                    {/* <Row>
                         <Col size="md-2">
                             <Link to="/conferences">← Back to Conferences</Link>
                         </Col>
-                    </Row>
+                    </Row> */}
+                </Row>
+                <Row>
+                    {/* <button>Register</button> */}
+                    <Col size="md-12"> 
+                    {/* onClick={this.handleFormSubmit} */}
+                        <RegisterBtn>Register</RegisterBtn>
+                     </Col>
                 </Row>
             </Container>
         );
