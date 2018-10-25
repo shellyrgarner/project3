@@ -6,8 +6,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // require("dotenv").config();
+// var passport = require('passport');
+// var expressSession = require('express-session');
+// app.use(expressSession({secret: 'mySecretKey'}));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-console.log(process.env.REACT_APP_SABRE_TOKEN)
+// var initPassport = require('./client/passport-mongo/init');
+// initPassport(passport);
+
+// var passportRoutes = require('./routes/index')(passport);
+// app.use('/', routes);
+
+// console.log(process.env.REACT_APP_SABRE_TOKEN)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());

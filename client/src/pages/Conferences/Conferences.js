@@ -142,7 +142,7 @@ class Conferences extends Component {
             </form>
           </Col>
         </Hero>
-     </Container >
+      </Container >
     );
   }
 }
