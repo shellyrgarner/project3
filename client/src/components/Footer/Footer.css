@@ -1,6 +1,6 @@
-#content {
+/* #content {
     padding-top: 70px;
-    /* min-height: ~"calc(100vh - 92px)"; */
+    /* min-height: ~"calc(100vh - 92px)";
   }
   
     .navbar
@@ -10,9 +10,9 @@
     margin: 20px 0 0;
 
 }
-body{
-    background-color: lightgray;
-}
+.imageContainer{
+    background-color: rgb(139, 121, 121);
+} */
   
     /* .copyright {
       padding-top: @padding-small-horizontal / 2;
@@ -20,3 +20,7 @@ body{
     
   
   
+.Footer-main {
+    background-color: rgb(200,200,200);
+    height: 10rem;
+}

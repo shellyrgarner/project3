@@ -1,0 +1,26 @@
+.Welcome-head {
+    margin-bottom: 10rem;
+}
+
+.Welcome-side-img {
+    max-width: 500px;
+    height: auto;
+}
+
+.Welcome-quotes {
+    color: orange;
+}
+
+.Welcome-user-picture {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.Welcome-stars {
+    display: block;
+    margin: 0 auto;
+    width: 10%;
+    overflow: visible;
+    white-space: nowrap;
+}

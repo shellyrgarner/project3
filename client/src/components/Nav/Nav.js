@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import logo from '../ca.png'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar light expand="md">
-          <NavbarBrand href="#"><img src="nav-img1" alt="logo"/></NavbarBrand>
+          <NavbarBrand href="#"><img src={logo} alt="logo"/></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

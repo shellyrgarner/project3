@@ -107,7 +107,7 @@ class Conferences extends Component {
 
         <Hero imgClass="hero-img2">
 
-        <Col size="md-8" classes="ml-auto mr-auto ">
+        <Col size="md-12" classes="">
 
           <h2>Add A Conference</h2>
 
