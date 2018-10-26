@@ -6,11 +6,11 @@ const SearchForm = props => (
       <label htmlFor="search">Search:</label>
       <input
         onChange={props.handleInputChange}
-        value={props.destination}
+        value={props.name}
         name="search"
         type="text"
         className="form-control"
-        placeholder="Search for a flight to"
+        placeholder="Search for a flight"
         id="search"
       />
       <button

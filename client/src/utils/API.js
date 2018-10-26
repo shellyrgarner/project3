@@ -1,14 +1,10 @@
 import axios from "axios";
 // require ("dotenv").config();
 
-const URL = "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey="
-const Destination = "&origin="
-const APIkey = "wGptpny252qHeFLrjj7yQjvG6KHqXuSn";
-
 export default {
 
-    getFlightsData: function (query) {
-        return axios.get(URL + APIkey + Destination + query)
+    search: function(query) {
+            return axios.get("https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wGptpny252qHeFLrjj7yQjvG6KHqXuSn&origin=ATL&destination=" + query)
     },
 
     scrapeConferences: function () {

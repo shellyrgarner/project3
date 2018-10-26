@@ -7,21 +7,22 @@ class TravelTips extends Component {
 
   state = {
     search: "",
-    results: []
+    results: [],
   };
 
 
   getFlightsData = (query) => {
     API.search(query)
-    .then(res => console.log(res));
+    .then(results => console.log(results.data.results))
+    .catch(err => console.log(err));
   };
   
 
   handleInputChange = event => {
-    const destionation = event.target.destionation;
+    const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      [destionation]: value
+      [name]: value
     });
   };
 
@@ -33,12 +34,12 @@ class TravelTips extends Component {
   render() {
     return (
       <div>
-      <SearchForm
-        search={this.state.search}
-        handleFormSubmit={this.handleFormSubmit}
-        handleInputChange={this.handleInputChange}
-      />
-      <ResultList results={this.state.results} />
+        <SearchForm
+          search={this.state.search}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+        />
+        <ResultList results={this.state.results} />
     </div>
     )
   }
