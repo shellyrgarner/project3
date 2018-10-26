@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchForm = props => (
   <form>
-    <div className="form-group">
+    <div className="form-group" style={{margin: "0 20px 20px 20px"}}>
       <label htmlFor="search">Search:</label>
       <input
         onChange={props.handleInputChange}

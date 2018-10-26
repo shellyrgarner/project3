@@ -9,10 +9,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
 } from 'reactstrap';
 
 export default class Example extends React.Component {
@@ -33,7 +29,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar light expand="md">
-          <NavbarBrand href="#">TEST</NavbarBrand>
+          <NavbarBrand href="#">CONVENE!</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -44,25 +40,11 @@ export default class Example extends React.Component {
                 <NavLink href="/conferences/:id">Schedule</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/traveltips">Travel Tips</NavLink>
+                <NavLink href="/profile">Profile</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  More
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/profile">Your Profile</NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                  <NavLink href="/settings">Settings</NavLink>
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem >
-                  <NavLink href="/">Sign Out</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="/signout">Sign Out</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
