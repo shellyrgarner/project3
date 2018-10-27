@@ -11,6 +11,7 @@ import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import Welcome from './pages/Welcome';
 
 const App = () => (
   <Router>

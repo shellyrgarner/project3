@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 3001;
 // app.use(expressSession({secret: 'mySecretKey'}));
 // app.use(passport.initialize());
 // app.use(passport.session());
+// require("dotenv").config();
+
+//console.log(process.env.REACT_APP_SABRE_TOKEN)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());

@@ -97,6 +97,8 @@ class Login extends Component {
                             </Button> 
             
                         {/* <form onSubmit={this.handleSubmit}>
+                    <div className="Login"> 
+                        <form onSubmit={this.handleSubmit}>
                             <FormGroup controlId="email" bsSize="lg">
                                 <ControlLabel>Email</ControlLabel>
                                 <FormControl
