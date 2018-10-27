@@ -31,10 +31,11 @@ function Footer(/*props*/) {
           <p>Logo Here</p>
         </div>
         <div className="col-3">
-          <h3>Links</h3>
+          <a>Terms of Use | Privacy Policy</a>
+
         </div>
         <div className="col-3">
-          <h3>Other</h3>
+          <h3></h3>
         </div>
         <div className="col-3">
         <a target="_blank" href="https://github.com/">
