@@ -5,6 +5,19 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", { useNewUrlParser: true });
 
+const userSeed = [
+    {
+        username: 'Tester',
+        email: 'test@hotmail.com',
+        password: 'test'
+    },
+    {
+        username: 'JackisAwesome',
+        email: 'awesomesauce@hotmail.com',
+        password: 'awesomesauce'
+    }
+];
+
 // const confSeed = [
 //     {
 //         event: "Test",
@@ -30,6 +43,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", { us
 //         beginDate: new Date("2018-12-14"),
 //         endDate: new Date("2018-12-16"),
 //     }];
+
+db.User
+    .deleteMany({})
+    .then(() => db.User.collection.insertMany(userSeed))
+    .then(data => {
+        console.log('users inserted');
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+
+    });
 
 db.Conference
     .deleteMany({})
