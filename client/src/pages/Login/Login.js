@@ -47,7 +47,7 @@ class Login extends Component {
             this.props.history.push('/conferences');
             location.reload(); // eslint-disable-line
         } catch (err) {
-            this.setState({ error: err.response.data.message });
+            // this.setState({ error: err.response.data.message });
         }
     };
 
