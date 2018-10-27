@@ -1,3 +1,4 @@
 module.exports = {
-    Conference: require("./conference")
+    Conference: require("./conference"),
+    User: require("./user")
 };
