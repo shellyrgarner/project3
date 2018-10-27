@@ -3,18 +3,46 @@
 }
 
 .Welcome-side-img {
-    max-width: 500px;
-    height: auto;
-}
+    /* max-width: 500px;
+    height: auto; */
+    padding-top: 200px;
+    height: 500px;
+    width: 500px;
 
+}
+.Welcome-side-text{
+    padding-top: 200px;
+    /* font-weight: bold;*/
+  font-size: 20px; 
+  height: 50px;
+  width: auto;
+
+
+
+}
 .Welcome-quotes {
     color: orange;
+    height: 40px;
+    
+
+}
+.Welcome-quote-text{
+    padding-top: 200px;
+    /* font-weight: bold;*/
+  font-size: 20px; 
+  height: 50px;
+  width: auto;
+    
+
 }
 
 .Welcome-user-picture {
     border-radius: 50%;
     display: block;
     margin: 0 auto;
+    max-width: 100px;
+    
+    
 }
 
 .Welcome-stars {
@@ -23,4 +51,5 @@
     width: 10%;
     overflow: visible;
     white-space: nowrap;
+     
 }
