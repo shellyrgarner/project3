@@ -1,82 +1,117 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./signup.css";
-
+import axios from "axios";
+import { Redirect } from "react-router-dom";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class SignUp extends Component {
-
-
     constructor(props) {
         super(props);
 
         this.state = {
-            name: "",
+            username: "",
             email: "",
-            password: ""
+            password: "",
+            messageFromServer: "",
+            showError: false,
+            registerError: false,
+            loginError: false
         };
     }
 
-    validateForm() {
-        return this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
-    }
+    // validateForm() {
+    //     return this.state.username.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
+    // }
 
     handleChange = event => {
+        const { name, value } = event.target;
         this.setState({
-            [event.target.id]: event.target.value
+            [name]: value
         });
     }
 
     handleSubmit = event => {
         event.preventDefault();
-    }
+        console.log('sign-up-form, email: ');
+        console.log(this.state.email);
+        if (this.state.username === '' || this.state.email === '' || this.state.password === '') {
+            this.setState({
+                showError: true,
+                loginError: false,
+                registerError: true
+            });
+        } else {
+            console.log(this.state);
+            axios.post('/auth/signup', {
+                email: this.state.email,
+                password: this.state.password,
+                username: this.state.username
+            })
+                .then((response) => localStorage.setItem('token', response.data.token))
+                // console.log("token:" + response.data.token)
+                .catch((error) => console.log('sign up server error: ', error));
 
+        }
+    };
 
     render() {
-
-        return (
-
-            <div className="SignUp">
-                <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="name" bsSize="large">
-                        <ControlLabel>Name</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="Name"
-                            value={this.state.name}
+        const { messageFromServer, showError, loginError, registerError } = this.state;
+        if (messageFromServer === '') {
+            return (
+                <div className="SignUp">
+                    <form>
+                        <Input
+                            placeholder="UserName"
+                            name="username"
+                            value={this.state.username}
                             onChange={this.handleChange}
                         />
-                    </FormGroup>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="Email"
+                        <Input
+                            placeholder="Email"
+                            name="email"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="larger">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
+                        <Input
+                            placeholder="Password"
+                            name="password"
                             value={this.state.password}
                             onChange={this.handleChange}
-                            type="password"
                         />
-                    </FormGroup>
-                    <Button href="/conferences"
-                        blockb
-                        bsSize="large"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        SignUp
-                </Button>
-                </form>
-            </div>
-        );
+                        <Button href="/conferences"
+                            blockb
+                            bsSize="large"
+                            // disabled={!this.validateForm()}
+                            type="submit"
+                            onClick={this.handleSubmit}
+                        >
+                            SignUp
+                        </Button>
+                        {/* <FormBtn
+                            onClick={this.handleSubmit}
+                        >
+                            Submit Event
+                        </FormBtn> */}
+                    </form>
+                    {showError === true &&
+                        registerError === true && (
+                            <div>
+                                <p>Username and password are required fields.</p>
+                            </div>
+                        )}
+                    {showError === true &&
+                        loginError === true && (
+                            <div>
+                                <p>That Email is already taken. Please choose another or login.</p>
+                            </div>
+                        )}
+                </div>
+            );
+        } else {
+            return <Redirect to={`/conferences`} />;
+
+        }
     }
-
 }
-
-
 export default SignUp;

@@ -1,0 +1,1007 @@
+[
+    {"state": "Georgia",
+    "airports": [
+        {
+            "code": "ATL",
+            "city": "Atlanta Hartsfield-Jackson"
+        },      
+        {
+            "code": "AGS",
+            "city": "Augusta"
+        },      
+        {
+            "code": "SAV",
+            "city": "Savannah"
+        }
+
+    ]
+    },
+    {"state": "Idaho",
+        "airports": [
+            {
+                "code": "BOI",
+                "city": "Boise"
+            }
+    
+        ]
+    },
+    {"state": "Alabama",
+        "airports": [
+            {
+                "code": "BHM",
+                "city": "Birmingham"
+            },      
+            {
+                "code": "DHN",
+                "city": "Dothan"
+            },      
+            {
+                "code": "HSV",
+                "city": "Huntsville"
+            },      
+            {
+                "code": "MOB",
+                "city": "Mobile"
+            },      
+            {
+                "code": "MGM",
+                "city": "Montgomery"
+            }
+    
+        ]
+    },
+    {"state": "Alaska",
+        "airports": [
+            {
+                "code": "ANC",
+                "city": "Anchorage"
+            },      
+            {
+                "code": "FAI",
+                "city": "Fairbanks"
+            },      
+            {
+                "code": "JNU",
+                "city": "Juneau"
+            }
+    
+        ]
+    },
+    {"state": "Arizona",
+        "airports": [
+            {
+                "code": "FLG",
+                "city": "Flagstaff"
+            },      
+            {
+                "code": "PHX",
+                "city": "Phoenix"
+            },      
+            {
+                "code": "TUS",
+                "city": "Tucson"
+            },      
+            {
+                "code": "YUM",
+                "city": "Yuma"
+            }
+    
+        ]
+    },
+    {"state": "Arkansas",
+        "airports": [
+            {
+                "code": "FYV",
+                "city": "Fayetteville"
+            },      
+            {
+                "code": "LIT",
+                "city": "Little Rock"
+            },      
+            {
+                "code": "XNA",
+                "city": "Northwest Arkansas"
+            }
+    
+        ]
+    },
+    {"state": "California",
+        "airports": [
+            {
+                "code": "BUR",
+                "city": "BUrbank"
+            },      
+            {
+                "code": "FAT",
+                "city": "Fresno"
+            },      
+            {
+                "code": "LGB",
+                "city": "Long Beach"
+            },      
+            {
+                "code": "LAX",
+                "city": "Los Angeles"
+            },      
+            {
+                "code": "OAK",
+                "city": "Oakland"
+            },      
+            {
+                "code": "ONT",
+                "city": "Ontario"
+            },      
+            {
+                "code": "PSP",
+                "city": "Palm Springs"
+            },      
+            {
+                "code": "SMF",
+                "city": "Sacramento"
+            },      
+            {
+                "code": "SAN",
+                "city": "San Diego"
+            },      
+            {
+                "code": "SFO",
+                "city": "San Francisco"
+            },      
+            {
+                "code": "SJC",
+                "city": "San Jose"
+            },      
+            {
+                "code": "SNA",
+                "city": "Santa Ana"
+            }
+    
+        ]
+    },
+    {"state": "Colorado",
+        "airports": [
+            {
+                "code": "ASE",
+                "city": "Aspen"
+            },      
+            {
+                "code": "COS",
+                "city": "Colorado Springs"
+            },      
+            {
+                "code": "DEN",
+                "city": "Denver"
+            },      
+            {
+                "code": "GJT",
+                "city": "Grand Junction"
+            },      
+            {
+                "code": "PUB",
+                "city": "Pueblo"
+            }
+    
+        ]
+    },
+    {"state": "Connecticut",
+        "airports": [
+            {
+                "code": "BDL",
+                "city": "Hartford"
+            },      
+            {
+                "code": "HVN",
+                "city": "Tweed New Haven"
+            }
+    
+        ]
+    },
+    {"state": "District of Columbia",
+        "airports": [
+            {
+                "code": "IAD",
+                "city": "Washington, Dulles International Airport"
+            },      
+            {
+                "code": "DCA",
+                "city": "Washington, Washington National Airport"
+            }
+    
+        ]
+    },
+    {"state": "Florida",
+        "airports": [
+            {
+                "code": "DAB",
+                "city": "Daytona Beach"
+            },      
+            {
+                "code": "FLL",
+                "city": "Fort Lauderdale"
+            },      
+            {
+                "code": "RSW",
+                "city": "Fort Meyers"
+            },      
+            {
+                "code": "JAX",
+                "city": "Jacksonville"
+            },      
+            {
+                "code": "EYW",
+                "city": "Key West"
+            },      
+            {
+                "code": "MIA",
+                "city": "Miami"
+            },      
+            {
+                "code": "MCO",
+                "city": "Orlando"
+            },      
+            {
+                "code": "PNS",
+                "city": "Pensacola"
+            },      
+            {
+                "code": "PIE",
+                "city": "St. Petersburg"
+            },      
+            {
+                "code": "SRQ",
+                "city": "Sarasota"
+            },      
+            {
+                "code": "TPA",
+                "city": "Tampa"
+            },      
+            {
+                "code": "PBI",
+                "city": "West Palm Beach"
+            },      
+            {
+                "code": "PFN",
+                "city": "Panama City"
+            }
+        ]
+    },
+    {"state": "Hawaii",
+        "airports": [
+            {
+                "code": "ITO",
+                "city": "Hilo"
+            },      
+            {
+                "code": "HNL",
+                "city": "Honolulu"
+            },      
+            {
+                "code": "OGG",
+                "city": "Kahului"
+            },      
+            {
+                "code": "KOA",
+                "city": "Kailua"
+            },      
+            {
+                "code": "LIH",
+                "city": "Lihue"
+            }
+    
+        ]
+    },
+    {"state": "Illinois",
+        "airports": [
+            {
+                "code": "MDW",
+                "city": "Chicago, Midway Airport"
+            },      
+            {
+                "code": "ORD",
+                "city": "Chicago, O'Hare International Airport"
+            },      
+            {
+                "code": "MLI",
+                "city": "Moline"
+            },      
+            {
+                "code": "PIA",
+                "city": "Peoria"
+            }
+    
+        ]
+    },
+    {"state": "Indiana",
+        "airports": [
+            {
+                "code": "EVV",
+                "city": "Evansville"
+            },      
+            {
+                "code": "FWA",
+                "city": "Fort Wayne"
+            },      
+            {
+                "code": "IND",
+                "city": "Indianapolis"
+            },      
+            {
+                "code": "SBN",
+                "city": "South Bend"
+            }
+    
+        ]
+    },
+    {"state": "Iowa",
+        "airports": [
+            {
+                "code": "CID",
+                "city": "Cedar Rapids"
+            },      
+            {
+                "code": "DSM",
+                "city": "Des Moines"
+            }
+    
+        ]
+    },
+    {"state": "Kansas",
+        "airports": [
+            {
+                "code": "ICT",
+                "city": "WIchita"
+            }
+    
+        ]
+    },
+    {"state": "Kentucky",
+        "airports": [
+            {
+                "code": "LEX",
+                "city": "Lexington"
+            },      
+            {
+                "code": "SDF",
+                "city": "Louisville"
+            }
+    
+        ]
+    },
+    {"state": "Louisiana",
+        "airports": [
+            {
+                "code": "BTR",
+                "city": "Baton Rouge"
+            },      
+            {
+                "code": "MSY",
+                "city": "New Orleans"
+            },      
+            {
+                "code": "SHV",
+                "city": "Shreveport"
+            }
+    
+        ]
+    },
+    {"state": "Maine",
+        "airports": [
+            {
+                "code": "AUG",
+                "city": "Augusta"
+            },      
+            {
+                "code": "BGR",
+                "city": "Bangor"
+            },      
+            {
+                "code": "PWM",
+                "city": "Portland"
+            }
+    
+        ]
+    },
+    {"state": "Maryland",
+        "airports": [
+            {
+                "code": "BWI",
+                "city": "Baltimore"
+            }
+    
+        ]
+    },
+    {"state": "Massachusetts",
+        "airports": [
+            {
+                "code": "BOS",
+                "city": "Boston"
+            },      
+            {
+                "code": "HYA",
+                "city": "Hyannis"
+            },      
+            {
+                "code": "ACK",
+                "city": "Nantucket"
+            },      
+            {
+                "code": "ORH",
+                "city": "Worcester"
+            }
+    
+        ]
+    },
+    {"state": "Michigan",
+        "airports": [
+            {
+                "code": "BTL",
+                "city": "Battlecreek"
+            },      
+            {
+                "code": "DTW",
+                "city": "Detroit, Metropolitan Airport"
+            },      
+            {
+                "code": "DET",
+                "city": "Detroit"
+            },      
+            {
+                "code": "FNT",
+                "city": "Flint"
+            },      
+            {
+                "code": "GRR",
+                "city": "Grant Rapids"
+            },      
+            {
+                "code": "AZO",
+                "city": "Kalamazoo-Battle Creek"
+            },      
+            {
+                "code": "LAN",
+                "city": "Lansing"
+            },      
+            {
+                "code": "MBS",
+                "city": "Saginaw"
+            }
+    
+        ]
+    },
+    {"state": "Minnesota",
+        "airports": [
+            {
+                "code": "DLH",
+                "city": "Duluth"
+            },      
+            {
+                "code": "MSP",
+                "city": "Minneapolis"
+            },      
+            {
+                "code": "RST",
+                "city": "Rochester"
+            }
+    
+        ]
+    },
+    {"state": "Mississippi",
+        "airports": [
+            {
+                "code": "GPT",
+                "city": "Gulfport"
+            },      
+            {
+                "code": "JAN",
+                "city": "Jackson"
+            }
+    
+        ]
+    },
+    {"state": "Missouri",
+        "airports": [
+            {
+                "code": "MCI",
+                "city": "Kansas City"
+            },      
+            {
+                "code": "STL",
+                "city": "St. Louis"
+            },      
+            {
+                "code": "SGF",
+                "city": "Springfield"
+            }
+    
+        ]
+    },
+    {"state": "Montana",
+        "airports": [
+            {
+                "code": "BIL",
+                "city": "Billings"
+            }
+    
+        ]
+    },
+    {"state": "Nebraska",
+        "airports": [
+            {
+                "code": "LNK",
+                "city": "Lincoln"
+            },      
+            {
+                "code": "OMA",
+                "city": "Omaha"
+            }
+    
+        ]
+    },
+    {"state": "Nevada",
+        "airports": [
+            {
+                "code": "LAS",
+                "city": "Las Vegas"
+            },      
+            {
+                "code": "RNO",
+                "city": "Reno"
+            }
+    
+        ]
+    },
+    {"state": "New Hampshire",
+        "airports": [
+            {
+                "code": "MHT",
+                "city": "Manchester"
+            }
+    
+        ]
+    },
+    {"state": "New Jersey",
+        "airports": [
+            {
+                "code": "ACY",
+                "city": "Atlantic City"
+            },      
+            {
+                "code": "EWR",
+                "city": "Newark"
+            },      
+            {
+                "code": "TTN",
+                "city": "Trenton"
+            }
+    
+        ]
+    },
+    {"state": "New Mexico",
+        "airports": [
+            {
+                "code": "ABQ",
+                "city": "Albuquerue"
+            },      
+            {
+                "code": "ALM",
+                "city": "Alamogordo"
+            }
+    
+        ]
+    },
+    {"state": "New York",
+        "airports": [
+            {
+                "code": "ALB",
+                "city": "Albany"
+            },      
+            {
+                "code": "BUF",
+                "city": "Buffalo"
+            },      
+            {
+                "code": "ISP",
+                "city": "Islip"
+            },      
+            {
+                "code": "JFK",
+                "city": "New York, John F Kennedy International Airport"
+            },      
+            {
+                "code": "LGA",
+                "city": "New York, La Guardia Airport"
+            },      
+            {
+                "code": "SWF",
+                "city": "Newburgh"
+            },      
+            {
+                "code": "ROC",
+                "city": "Rochester"
+            },      
+            {
+                "code": "SYR",
+                "city": "Syracuse"
+            },      
+            {
+                "code": "HPN",
+                "city": "Westchester"
+            }
+    
+        ]
+    },
+    {"state": "North Carolina",
+        "airports": [
+            {
+                "code": "AVL",
+                "city": "Asheville"
+            },      
+            {
+                "code": "CLT",
+                "city": "Charlotte"
+            },      
+            {
+                "code": "FAY",
+                "city": "Fayetteville"
+            },      
+            {
+                "code": "GSO",
+                "city": "Greensboro"
+            },      
+            {
+                "code": "RDU",
+                "city": "Raleigh"
+            },      
+            {
+                "code": "INT",
+                "city": "Winston-Salem"
+            }
+    
+        ]
+    },
+    {"state": "North Dakota",
+        "airports": [
+            {
+                "code": "BIS",
+                "city": "Bismark"
+            },      
+            {
+                "code": "FAR",
+                "city": "Fargo"
+            }
+    
+        ]
+    },
+    {"state": "Ohio",
+        "airports": [
+            {
+                "code": "CAK",
+                "city": "Akron"
+            },      
+            {
+                "code": "CVG",
+                "city": "Cincinnati"
+            },      
+            {
+                "code": "CLE",
+                "city": "Cleveland"
+            },      
+            {
+                "code": "CMH",
+                "city": "Columbus"
+            },      
+            {
+                "code": "DAY",
+                "city": "Dayton"
+            },      
+            {
+                "code": "TOL",
+                "city": "Toledo"
+            }
+    
+        ]
+    },
+    {"state": "Oklahoma",
+        "airports": [
+            {
+                "code": "OKC",
+                "city": "Oklahoma City"
+            },      
+            {
+                "code": "TUL",
+                "city": "Tulsa"
+            }
+    
+        ]
+    },
+    {"state": "Oregon",
+        "airports": [
+            {
+                "code": "EUG",
+                "city": "Eugene"
+            },      
+            {
+                "code": "PDX",
+                "city": "Portland, International Airport"
+            },      
+            {
+                "code": "HIO",
+                "city": "Portland, Hillsboro Airport"
+            },      
+            {
+                "code": "SLE",
+                "city": "Salem"
+            }
+    
+        ]
+    },
+    {"state": "Pennsylvania",
+        "airports": [
+            {
+                "code": "ABE",
+                "city": "Allentown"
+            },      
+            {
+                "code": "ERI",
+                "city": "Erie"
+            },      
+            {
+                "code": "MDT",
+                "city": "Harrisburg"
+            },      
+            {
+                "code": "PHL",
+                "city": "Philadelphia"
+            },      
+            {
+                "code": "PIT",
+                "city": "Pittsburgh"
+            },      
+            {
+                "code": "AVP",
+                "city": "Scranton"
+            }
+    
+        ]
+    },
+    {"state": "Rhode Island",
+        "airports": [
+            {
+                "code": "PVD",
+                "city": "Providence"
+            }
+    
+        ]
+    },
+    {"state": "South Carolina",
+        "airports": [
+            {
+                "code": "CHS",
+                "city": "Charleston"
+            },      
+            {
+                "code": "CAE",
+                "city": "Columbia"
+            },      
+            {
+                "code": "GSP",
+                "city": "Greenville"
+            },      
+            {
+                "code": "MYR",
+                "city": "Myrtle Beach"
+            }
+    
+        ]
+    },
+    {"state": "South Dakota",
+        "airports": [
+            {
+                "code": "PIR",
+                "city": "Pierre"
+            },      
+            {
+                "code": "RAP",
+                "city": "Rapid City"
+            },      
+            {
+                "code": "FSD",
+                "city": "Sioux Falls"
+            }
+    
+        ]
+    },
+    {"state": "Tennessee",
+        "airports": [
+            {
+                "code": "TRI",
+                "city": "Bristol"
+            },      
+            {
+                "code": "CHA",
+                "city": "Chattanooga"
+            },      
+            {
+                "code": "TYS",
+                "city": "Knoxville"
+            },      
+            {
+                "code": "MEM",
+                "city": "Memphis"
+            },      
+            {
+                "code": "BNA",
+                "city": "Nashville"
+            }
+    
+        ]
+    },
+    {"state": "Texas",
+        "airports": [
+            {
+                "code": "AMA",
+                "city": "Amarillo"
+            },      
+            {
+                "code": "AUS",
+                "city": "Austin"
+            },      
+            {
+                "code": "CRP",
+                "city": "Corpus Christi"
+            },      
+            {
+                "code": "DAL",
+                "city": "Dallas"
+            },      
+            {
+                "code": "ELP",
+                "city": "El Paso"
+            },      
+            {
+                "code": "HOU",
+                "city": "Houston, William B Hobby Airport"
+            },      
+            {
+                "code": "IAH",
+                "city": "Houston, G. Bush Intercontinental Airport"
+            },      
+            {
+                "code": "LBB",
+                "city": "Lubbock"
+            },      
+            {
+                "code": "MAF",
+                "city": "Midland"
+            },      
+            {
+                "code": "SAT",
+                "city": "San Antonio"
+            }
+    
+        ]
+    },
+    {"state": "Utah",
+        "airports": [
+            {
+                "code": "SLC",
+                "city": "Salt Lake City"
+            }
+    
+        ]
+    },
+    {"state": "Vermont",
+        "airports": [
+            {
+                "code": "BTV",
+                "city": "Burlington"
+            },      
+            {
+                "code": "MPV",
+                "city": "Montpelier"
+            },      
+            {
+                "code": "RUT",
+                "city": "Rutland"
+            }
+    
+        ]
+    },
+    {"state": "Virginia",
+        "airports": [
+            {
+                "code": "IAD",
+                "city": "Dulles"
+            },      
+            {
+                "code": "PHF",
+                "city": "Newport News"
+            },      
+            {
+                "code": "ORF",
+                "city": "Norfolk"
+            },      
+            {
+                "code": "RIC",
+                "city": "Richmond"
+            },      
+            {
+                "code": "ROA",
+                "city": "Roanoke"
+            }
+    
+        ]
+    },
+    {"state": "Washington",
+        "airports": [
+            {
+                "code": "PSC",
+                "city": "Pasco"
+            },      
+            {
+                "code": "SEA",
+                "city": "Seattle"
+            },      
+            {
+                "code": "GEG",
+                "city": "Spokane"
+            }
+    
+        ]
+    },
+    {"state": "West Virginia",
+        "airports": [
+            {
+                "code": "CRW",
+                "city": "Charleston"
+            },      
+            {
+                "code": "CKB",
+                "city": "Clarksburg"
+            },      
+            {
+                "code": "HTS",
+                "city": "Huntington"
+            }
+    
+        ]
+    },
+    {"state": "Wisconsin",
+        "airports": [
+            {
+                "code": "GRB",
+                "city": "Green Bay"
+            },      
+            {
+                "code": "MSN",
+                "city": "Madison"
+            },      
+            {
+                "code": "MKE",
+                "city": "Milwaukee"
+            }
+    
+        ]
+    },
+    {"state": "Wyoming",
+        "airports": [
+            {
+                "code": "CPR",
+                "city": "Casper"
+            },      
+            {
+                "code": "CYS",
+                "city": "Cheyenne"
+            },      
+            {
+                "code": "JAC",
+                "city": "Jackson Hole"
+            },      
+            {
+                "code": "RKS",
+                "city": "Rock Springs"
+            }
+    
+        ]
+    }
+]
