@@ -41,7 +41,7 @@ class Login extends Component {
                 <div className="logo">
                     <div className="Login"> 
                         <form onSubmit={this.handleSubmit}>
-                            <FormGroup controlId="email" bsSize="large">
+                            <FormGroup controlId="email" bsSize="lg">
                                 <ControlLabel>Email</ControlLabel>
                                 <FormControl
                                     autoFocus
@@ -50,7 +50,7 @@ class Login extends Component {
                                     onChange={this.handleChange}
                                 />
                             </FormGroup>
-                            <FormGroup controlId="password" bsSize="larger">
+                            <FormGroup controlId="password" bsSize="lg">
                                 <ControlLabel>Password</ControlLabel>
                                 <FormControl
                                     value={this.state.password}
@@ -59,7 +59,7 @@ class Login extends Component {
                                 />
                             </FormGroup>
                             <Button href="/conferences"
-                                blockb
+                                blockb="true"
                                 bsSize="large"
                                 disabled={!this.validateForm()}
                                 type="submit"
@@ -67,7 +67,7 @@ class Login extends Component {
                                 Login
                 </Button>
                             <Button href="/signup"
-                                blockb
+                                blockb="true"
                                 bsSize="large"
                                 type="submit"
                             >
