@@ -41,7 +41,8 @@ class SignUp extends Component {
                 loginError: false,
                 registerError: true
             });
-        } else {
+        } 
+        else {
             console.log(this.state);
             axios.post('/auth/signup', {
                 email: this.state.email,
@@ -52,66 +53,70 @@ class SignUp extends Component {
                 // console.log("token:" + response.data.token)
                 .catch((error) => console.log('sign up server error: ', error));
 
+                this.props.history.push('/conferences');
         }
     };
 
     render() {
         const { messageFromServer, showError, loginError, registerError } = this.state;
-        if (messageFromServer === '') {
-            return (
-                <div className="SignUp">
-                    <form>
-                        <Input
-                            placeholder="UserName"
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                        />
-                        <Input
-                            placeholder="Email"
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                        <Input
-                            placeholder="Password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                        <Button href="/conferences"
+        // if (messageFromServer === '') {
+        return (
+            <div className="SignUp">
+                <form>
+                    <Input
+                        placeholder="UserName"
+                        name="username"
+                        value={this.state.username}
+                        onChange={this.handleChange}
+                    />
+                    <Input
+                        placeholder="Email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                    />
+                    <Input
+                        placeholder="Password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                    />
+               
+                    <Button href="/conferences"
                             blockb
                             bsSize="large"
                             // disabled={!this.validateForm()}
                             type="submit"
                             onClick={this.handleSubmit}
-                        >
+                        > 
                             SignUp
                         </Button>
-                        {/* <FormBtn
-                            onClick={this.handleSubmit}
-                        >
-                            Submit Event
-                        </FormBtn> */}
-                    </form>
-                    {showError === true &&
-                        registerError === true && (
-                            <div>
-                                <p>Username and password are required fields.</p>
-                            </div>
-                        )}
-                    {showError === true &&
-                        loginError === true && (
-                            <div>
-                                <p>That Email is already taken. Please choose another or login.</p>
-                            </div>
-                        )}
-                </div>
-            );
-        } else {
-            return <Redirect to={`/conferences`} />;
-
-        }
+                    {/* <FormBtn
+                        type="submit"
+                        onClick={this.handleSubmit}
+                    >
+                        SignUp
+                    </FormBtn> */}
+                </form>
+                {showError === true &&
+                    registerError === true && (
+                        <div>
+                            <p>Username and password are required fields.</p>
+                        </div>
+                    )}
+                {showError === true &&
+                    loginError === true && (
+                        <div>
+                            <p>That Email is already taken. Please choose another or login.</p>
+                        </div>
+                    )}
+            </div>
+        );
     }
+    // else {
+    //     return <Redirect to={`/conferences`} />;
+
+    // }
+    // }
 }
 export default SignUp;

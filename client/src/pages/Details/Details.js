@@ -7,7 +7,8 @@ import RegisterBtn from "../../components/RegisterConfBtn";
 
 class Details extends Component {
     state = {
-        conference: {}
+        conference: {},
+        count: 0
     };
     // When this component mounts, grab the conference with the _id of this.props.match.params.id
     // e.g. localhost:3000/conferences/5bc28d76abe9d115cc03375d
@@ -18,21 +19,11 @@ class Details extends Component {
             .catch(err => console.log(err));
     }
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-        // if (this.state.event && this.state.location) {
-        //   API.postConference({
-        //     event: this.state.event,
-        //     beginDate: this.state.beginDate,
-        //     endDate: this.state.endDate,
-        //     venue: this.state.venue,
-        //     location: this.state.location,
-        //     info: this.state.info
-        //   })
-        //     .then(res => this.loadConferences())
-            // .catch(err => console.log("handleformsubmit ERROR: " + err));
-        // }
-      
+    handleClick = () => {
+        this.setState((prevState, { count }) => ({
+            count: prevState.count + 1
+        }));
+    };
 
     render() {
         return (
@@ -61,11 +52,14 @@ class Details extends Component {
                     </Row> */}
                 </Row>
                 <Row>
-                    {/* <button>Register</button> */}
-                    <Col size="md-12"> 
-                    {/* onClick={this.handleFormSubmit} */}
-                        <RegisterBtn>Register</RegisterBtn>
-                     </Col>
+                    <Col size="md-12">
+                        <RegisterBtn
+                            onClick={this.handleClick}
+                        >
+                            Attend Conference
+                        </RegisterBtn>
+                        <p> <strong>{this.state.count} Attending!</strong> </p>
+                    </Col>
                 </Row>
             </Container>
         );

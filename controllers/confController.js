@@ -49,8 +49,3 @@ module.exports = {
         //console.log("remove ERROR: " + err);
     }
 };
-
-// Tank.create({ req.data }, function (err, small) {
-//     if (err) return handleError(err);
-//     // saved!
-//   });
