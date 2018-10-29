@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import ResultList from "../TravelTips/resultList";
+import { Container, Row, Col } from "reactstrap";
 import SearchForm from "../TravelTips/searchForm";
 
 class TravelTips extends Component {
@@ -13,7 +13,10 @@ class TravelTips extends Component {
 
   getFlightsData = (query) => {
     API.search(query)
-    .then(results => console.log(results.data.results))
+    .then(res => {
+      this.setState({ results: res.data.results});
+      console.log(res.data.results[0]);
+    })
     .catch(err => console.log(err));
   };
   
@@ -32,6 +35,7 @@ class TravelTips extends Component {
   };
 
   render() {
+
     return (
       <div>
         <SearchForm
@@ -39,9 +43,24 @@ class TravelTips extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        
+        {this.state.results.map(data => {
+          return (
+          <div>
+            <Container>
+              <Row>
+                <Col>
+                  <ul>
+                    <li>data: {data.data}</li>
+                  </ul>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          )
+        })}
     </div>
-    )
+    );
   }
 };
 
