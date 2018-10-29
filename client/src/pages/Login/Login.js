@@ -4,6 +4,8 @@ import "./login.css";
 import Hero from "../../components/Hero";
 import axios from "axios";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Footer from "../../components/Footer";
+import { Container } from "../../components/Grid";
 
 class Login extends Component {
     constructor(props) {
@@ -135,6 +137,7 @@ class Login extends Component {
                     </div>
                 </div>
             </Hero>
+
         );
     }
 

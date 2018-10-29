@@ -4,6 +4,7 @@ import "./signup.css";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Footer from "../../components/Footer";
 
 class SignUp extends Component {
     constructor(props) {

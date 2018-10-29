@@ -4,6 +4,8 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import RegisterBtn from "../../components/RegisterConfBtn";
+import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
 
 class Details extends Component {
     state = {
@@ -39,10 +41,14 @@ class Details extends Component {
             <Container fluid>
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron>
+                    <Hero imgClass="hero-img5">
+
+                    <h2>Schedule</h2>
+                    <br></br>
+       
                             <h3>{this.state.conference.event}</h3>
                             <p>{this.state.conference.beginDate}-{this.state.conference.endDate}</p>
-                        </Jumbotron>
+                        </Hero>
                     </Col>
                 </Row>
                 <Row>
@@ -67,6 +73,7 @@ class Details extends Component {
                         <RegisterBtn>Register</RegisterBtn>
                      </Col>
                 </Row>
+                <Footer />
             </Container>
         );
     }

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Grid, Nav, NavItem } from 'react-bootstrap';
 import './Footer.css';
-
+import logo from '../cv.png'
 // <footer>
 //   <Grid>
 //     <Nav>
@@ -28,7 +28,8 @@ function Footer(/*props*/) {
     <div className="Footer-main">
       <div className="row">
         <div className="col-3">
-          <p>Logo Here</p>
+    
+         <img src={logo} alt="logo"/>
         </div>
         <div className="col-3">
           <a>Terms of Use | Privacy Policy</a>

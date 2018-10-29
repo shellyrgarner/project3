@@ -92,7 +92,7 @@ font-size:20px !important;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1523475894503-be2117952e76?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d67f49467abfdb291951240b175494d3&auto=format&fit=crop&w=800&q=60);
     
 }
-hero-imgx {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(https://images.unsplash.com/photo-1516728043722-b394cb2f689e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c82882f6f384a30402cc75029d9e7b11&auto=format&fit=crop&w=2850&q=80);
+.hero-img5{
+    background-image:url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e3917e828b7c2502b0041813eff1294&auto=format&fit=crop&w=800&q=60);
 
 }

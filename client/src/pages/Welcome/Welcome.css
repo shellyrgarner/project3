@@ -38,7 +38,6 @@
 
 .Welcome-user-picture {
     border-radius: 50%;
-    padding-top: 200px;
     display: block;
     margin: 0 auto;
     max-width: 100px;
@@ -53,4 +52,8 @@
     overflow: visible;
     white-space: nowrap;
      
+}
+
+.Welcome-review-wrapper {
+    padding-top: 200px;
 }

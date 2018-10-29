@@ -13,12 +13,14 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Welcome from './pages/Welcome';
 
+
 const App = () => (
   <Router>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Login} />
+      <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Welcome} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/conferences" component={Conferences} />
         <Route exact path="/conferences/schedule" component={Schedule} />
