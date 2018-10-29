@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+// import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./signup.css";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+// import { Redirect } from "react-router-dom";
+// import { Input, FormBtn } from "../../components/Form";
+import { Input } from "../../components/Form";
+
 
 class SignUp extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
+        // this.state = {
+           
+        state = {
             username: "",
             email: "",
             password: "",
@@ -17,8 +22,8 @@ class SignUp extends Component {
             showError: false,
             registerError: false,
             loginError: false
-        };
-    }
+        // };
+    };
 
     // validateForm() {
     //     return this.state.username.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
@@ -58,7 +63,9 @@ class SignUp extends Component {
     };
 
     render() {
-        const { messageFromServer, showError, loginError, registerError } = this.state;
+        // const { messageFromServer, showError, loginError, registerError } = this.state;
+        const { showError, loginError, registerError } = this.state;
+        
         // if (messageFromServer === '') {
         return (
             <div className="SignUp">

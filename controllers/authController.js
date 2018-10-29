@@ -15,8 +15,14 @@ module.exports = {
     login: async function (req, res) {
         // Using the email located on the request body, query the database and
         // get the user's data
-        const user = await db.User.findOne({ where: { email: req.body.email } });
+        //  const user = await db.User.findOne({ where: { email: req.body.email } });
 
+        const user = db.User
+            .findOne(req.body.email)
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err));
+
+        console.log("authcontroller: " + req.body.email)
         // If the user doesn't exist, send a status code of 401 (Unauthorized)
         // and let them know that their email is invalid
         if (!user) {
@@ -25,12 +31,18 @@ module.exports = {
 
         // Compare the hashed password from the database and the password located on
         // the request body using bcrypt
-        const passwordsMatch = await bcrypt.compare(req.body.password, user.password);
+        // const passwordsMatch = await bcrypt.compare(req.body.password, user.password);
+        const passwordsMatch = await bcrypt.compare(req.body.password, user.password, function (err, res) {
+            if (err) return (err);
+             console.log("im in the authcontroller bcryptcompare login function");
+        });
 
         // If the passwords do not match, then send a status code of 401 (Unauthorized)
         // and let the user know that the given passwords do not match
         if (!passwordsMatch) {
-            return res.status(400).json({ field: 'password', message: 'Invalid password' });
+            console.log("password:" + passwordsMatch)
+            return res.status(400).json({ field: 'password', message: 'Passwords do not match' });
+
         }
 
         // If the email and password are valid, then extract the necessary data from
@@ -48,7 +60,7 @@ module.exports = {
      * Registers a new user, returns the new user's JWT to the client
      */
     // export 
-    signup:  async function (req, res) {
+    signup: async function (req, res) {
         // Queries the database for an already-existing user with the given email
         let user = await db.User.findOne({ where: { email: req.body.email } });
         // let email = req.body.email;
@@ -64,10 +76,10 @@ module.exports = {
         //     Email: req.body.email,
         //     Password: req.body.password          
         // };
-    // return axios({
-    //     method: 'post',
-    //     url: '/api/conferences',
-    //     data: incomingData
+        // return axios({
+        //     method: 'post',
+        //     url: '/api/conferences',
+        //     data: incomingData
 
         // If said user already exists, then send a status code of 400 (Bad Request)
         // and send a message saying that the email is already taken
@@ -77,23 +89,39 @@ module.exports = {
 
         // If the user doesn't already exist, create a new user based on the provided
         // data in the request body, and hash the given password
-        user = await db.User.create({
-            ...req.body,
-            password: await bcrypt.hash(req.body.password, env.BCRYPT_SALT_ROUNDS)
-        });
-    
+        // user = await db.User.create({
+        //     ...req.body,
+        //     password: await bcrypt.hash(req.body.password, env.BCRYPT_SALT_ROUNDS, null, function (err, hash) {
+        //         console.log("im in the authcontroller bcrypthash signup function");
+        //     })
+        // });
+
+        user = bcrypt.hash(req.body.password, env.BCRYPT_SALT_ROUNDS, null, function (err, hash) {
+            db.User.create({
+                username: req.body.username,
+                email: req.body.email,
+                password: hash
+            }).then(dbConf => res.json(dbConf))
+                .catch(err => res.status(422).json(err));
+
+
+        })
+
 
         // Retrieve the newly-created user from the database and extract the below
         // properties from the user's object. These properties will be accessible
         // from the decoded JWT
-        user = user.get();
+        // user = user.get();
         // const { createdAt, email, username, updatedAt } = user;
         const { email, username } = user;
+        console.log("email check:" + user)
+
 
         // "Sign" the user object using the extracted data and the `JWT_SECRET`
         // environment variable. This is what creates the JWT.
         // const token = jwt.sign({ createdAt, email, username, updatedAt }, env.JWT_SECRET);
         const token = jwt.sign({ email, username }, env.JWT_SECRET);
+        console.log("token check:" + token)
 
         // Send the token to the client
         return res.json({ token });
