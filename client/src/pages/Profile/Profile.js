@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
+import Footer from "../../components/Footer";
 
 
 
@@ -16,6 +17,7 @@ class Profile extends Component {
                   </Jumbotron>
                 </Col>
             </Row>
+            <Footer />
             </Container>
         )
     }

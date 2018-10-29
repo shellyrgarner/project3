@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 
 
@@ -43,6 +44,7 @@ class Settings extends React.Component {
                         <button onClick={this.filleUploadHandler}>Upload</button>
                     </Col>
                 </Row>
+                <Footer />
             </Container>
 
         )

@@ -9,6 +9,7 @@ import Hero from "../../components/Hero";
 import Footer from "../../components/Footer";
 import ScrapeBtn from "../../components/Button";
 
+
 class Conferences extends Component {
 
   state = {
@@ -143,6 +144,7 @@ class Conferences extends Component {
             </form>
           </Col>
         </Hero>
+        <Footer />
       </Container >
     );
   }
