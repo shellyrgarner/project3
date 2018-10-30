@@ -126,7 +126,8 @@ class Login extends Component {
                             >
                                 Login
                             </Button>
-                            <p>Or</p>
+                            <br></br>
+                            {/* <p>Or</p> */}
                             <Button href="/signup"
                                 blockb="true"
                                 bsSize="large"
