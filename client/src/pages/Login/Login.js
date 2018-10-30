@@ -95,7 +95,7 @@ class Login extends Component {
 
     render() {
         return (
-            <Hero imgClass="hero-img3">
+            <Hero imgClass="hero-img3" classes="Login-hero">
                 <div className="logo">
                     <div className="Login">
                         <form>

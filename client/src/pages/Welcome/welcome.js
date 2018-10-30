@@ -11,7 +11,7 @@ const Welcome = () => (
   <Container fluid>
     <Row>
       <Col size="md-12">
-        <Hero imgClass="hero-img4">
+        <Hero imgClass="hero-img4" classes="Welcome-hero">
           <h5>Convene'</h5>
           <br></br>
           <h3> Organize all your conferences in one site!</h3>
@@ -25,10 +25,7 @@ const Welcome = () => (
       <Col size="md-6">
         <div className="Welcome-side-text">
 
-          <p >
-
             <h2> One Stop Service</h2>
-          </p>
 
           <p>Convene' offers several features to provide exhibitors and sponsors more visibility.</p>
           <p >
@@ -87,10 +84,7 @@ const Welcome = () => (
       <Col size="md-6">
         <div className="Welcome-side-text">
 
-          <p >
-
             <h2> Create better opportunities for networking</h2>
-          </p>
           <br>
           </br>
 
@@ -133,7 +127,7 @@ const Welcome = () => (
               </Row>
               <Row>
                 <Col size="12">
-                  <p className="text-center" font-weight="900px">John Livonka, HR Director - Pines Industries</p>
+                  <p className="text-center" fontWeight="900px">John Livonka, HR Director - Pines Industries</p>
                   {/* <div className="Welcome-stars">
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
@@ -160,7 +154,7 @@ const Welcome = () => (
               </Row>
               <Row>
                 <Col size="12">
-                  <p className="text-center" font-weight="900px">Monica DePoint MD, Internalist - Emory Hospital</p>
+                  <p className="text-center" fontWeight="900px">Monica DePoint MD, Internalist - Emory Hospital</p>
                   {/* <div className="Welcome-stars">
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
@@ -187,7 +181,7 @@ const Welcome = () => (
               </Row>
               <Row>
                 <Col size="12">
-                  <p className="text-center" font-weight="900px">Brian Lee, Product Manager - AOL</p>
+                  <p className="text-center" fontWeight="900px">Brian Lee, Product Manager - AOL</p>
                   {/* <div className="Welcome-stars">
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
