@@ -1,8 +1,6 @@
-
-
 import React from 'react';
 import './Footer.css';
-
+import logo from '../cv.png'
 // <footer>
 //   <Grid>
 //     <Nav>
@@ -27,13 +25,15 @@ function Footer(/*props*/) {
     <div className="Footer-main">
       <div className="row">
         <div className="col-3">
-          <p>Logo Here</p>
+    
+         <img src={logo} alt="logo"/>
         </div>
         <div className="col-3">
-          <h3>Links</h3>
+          <a>Terms of Use | Privacy Policy</a>
+
         </div>
         <div className="col-3">
-          <h3>Other</h3>
+          <h3></h3>
         </div>
         <div className="col-3">
         <a target="_blank" href="https://github.com/">

@@ -10,7 +10,7 @@ const Welcome = () => (
   <Container fluid>
     <Row>
       <Col size="md-12">
-        <Hero imgClass="hero-img4">
+        <Hero imgClass="hero-img4" classes="Welcome-hero">
           <h5>Convene'</h5>
           <br></br>
           <h3> Organize all your conferences in one site!</h3>
@@ -24,15 +24,13 @@ const Welcome = () => (
       <Col size="md-6">
         <div className="Welcome-side-text">
 
-          <p>Convene' offers several features to provide exhibitors and sponsors more visibility.
-          
-</p>
-          <p >
+            <h2> One Stop Service</h2>
 
+          <p>Convene' offers several features to provide exhibitors and sponsors more visibility.</p>
+          <p >
             In addition to the basic splash screens and landing pages, your attendees and exhibitors can book appointments within the platform which automatically get uploaded into their schedule.
             This feature is paramount in creating the expected ROI and branding your sponsors are looking for.
-            
-</p>
+            </p>
 
           <p>
             Let Convene' help you deliver value that translates into dollars (or Euros, Renminbi or Bitcoin).
@@ -71,7 +69,7 @@ const Welcome = () => (
 
           <p>
             <span className="Welcome-quotes fa fa-2x fa-quote-left" />
-            Convene' is an Awesome site!  I have my conferene details at my fingertips.
+            Convene' is an Awesome site!  I have my conferene details at my fingertips. What did we do before Convene'?
         <span className="Welcome-quotes fa fa-2x fa-quote-right " />
           </p>
         </div>
@@ -85,10 +83,7 @@ const Welcome = () => (
       <Col size="md-6">
         <div className="Welcome-side-text">
 
-          <p >
-
             <h2> Create better opportunities for networking</h2>
-          </p>
           <br>
           </br>
 
@@ -113,66 +108,93 @@ const Welcome = () => (
 
     </Row>
 
-    <Row>
-      <Col size="12">
-        <Row>
-          {/* Begin User Review */}
-          <Col size="4">
-            <Row>
-              <Col size="12">
-                <img className="Welcome-user-picture" src="https://pbs.twimg.com/profile_images/884980031297961984/PNNTLOhK_400x400.jpg" />
-              </Col>
-            </Row>
-            <Row>
-              <Col size="12">
-                <p className="text-center">"Convene' dramatically transformed my experience at the event. I really appreciate that I did not have a giant stack of papers or binder to sift through for every speaker. It could also accommodate for a change in speaker line-up."</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col size="12">
-                <p className="text-center" font-weight="900px">John Livonka, HR Director - Pines Industries</p>
-                {/* <div className="Welcome-stars">
+    <div className="Welcome-review-wrapper">
+      <Row>
+        <Col size="12">
+          <Row>
+            {/* Begin User Review */}
+            <Col size="4">
+              <Row>
+                <Col size="12">
+                  <img className="Welcome-user-picture" src="https://pbs.twimg.com/profile_images/884980031297961984/PNNTLOhK_400x400.jpg" />
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center">"Convene' dramatically transformed my experience at the event. I really appreciate that I did not have a giant stack of papers or binder to sift through for every speaker. It could also accommodate for a change in speaker line-up."</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center" fontWeight="900px">John Livonka, HR Director - Pines Industries</p>
+                  {/* <div className="Welcome-stars">
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                 </div> */}
-              </Col>
-            </Row>
-          </Col>
-          {/* End User Review */}
-          {/* Begin User Review */}
-          <Col size="4">
-            <Row>
-              <Col size="12">
-                <img className="Welcome-user-picture" src="http://newsinfo.iu.edu/pub/libs/images/usr/10933.jpg" />
-              </Col>
-            </Row>
-            <Row>
-              <Col size="12">
-                <p className="text-center">
-                  The app definitely did what we wanted it to do, which was to increase connection and excitement about the event.</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col size="12">
-                <p className="text-center" font-weight="900px">Monica DePoint MD, Internalist - Emory Hospital</p>
-                {/* <div className="Welcome-stars">
+                </Col>
+              </Row>
+            </Col>
+            {/* End User Review */}
+            {/* Begin User Review */}
+            <Col size="4">
+              <Row>
+                <Col size="12">
+                  <img className="Welcome-user-picture" src="http://newsinfo.iu.edu/pub/libs/images/usr/10933.jpg" />
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center">
+                    The app definitely did what we wanted it to do, which was to increase connection and excitement about the event.</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center" fontWeight="900px">Monica DePoint MD, Internalist - Emory Hospital</p>
+                  {/* <div className="Welcome-stars">
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                   <span class="fa fa-star checked" />
                 </div> */}
-              </Col>
-            </Row>
-          </Col>
-          {/* End User Review */}
-        </Row>
-      </Col>
-    </Row>
-
+                </Col>
+              </Row>
+            </Col>
+            {/* End User Review */}
+            <Col size="4">
+              <Row>
+                <Col size="12">
+                  <img className="Welcome-user-picture" src="https://2h7qju2c3qvcc3s86ekn8n0-wpengine.netdna-ssl.com/brooklyn/wp-content/uploads/sites/4/2016/01/jason_shen_headshot-e1453909823506.jpg" />
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center">“The customer service FAR exceeded our expectations, and the team was fantastic!
+                  One of the main reasons we decided to go through with using Convene' was the staff, hands down.
+                Even my wants that I couldn’t have were answered well and handled properly.”</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col size="12">
+                  <p className="text-center" fontWeight="900px">Brian Lee, Product Manager - AOL</p>
+                  {/* <div className="Welcome-stars">
+                  <span class="fa fa-star checked" />
+                  <span class="fa fa-star checked" />
+                  <span class="fa fa-star checked" />
+                  <span class="fa fa-star checked" />
+                  <span class="fa fa-star checked" />
+                </div> */}
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </div>
 
     {  /* <Row>
       

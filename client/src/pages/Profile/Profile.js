@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./profile.css";
 import Webcam from "react-webcam";
-
+import Footer from "../../components/Footer";
 
 class Profile extends Component {
     constructor(props) {

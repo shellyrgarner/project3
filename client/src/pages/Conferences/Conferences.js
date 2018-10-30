@@ -9,6 +9,7 @@ import Hero from "../../components/Hero";
 import Footer from "../../components/Footer";
 import ScrapeBtn from "../../components/Button";
 
+
 class Conferences extends Component {
 
   state = {
@@ -66,7 +67,7 @@ class Conferences extends Component {
         <Row>
           <Col size="md-6 sm-12">
             <Hero imgClass="hero-img1">
-              <h1>Your Conferences</h1>
+              <h1>Upcoming Conferences</h1>
               <ScrapeBtn scrape={this.scrape} />
               {this.state.conferences.length ? (
                 <List>
@@ -143,6 +144,7 @@ class Conferences extends Component {
             </form>
           </Col>
         </Hero>
+        <Footer />
       </Container >
     );
   }

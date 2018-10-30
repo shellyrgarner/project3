@@ -3,6 +3,11 @@
   /* background-image: url("/client/src/images/Convene\ Logo.png"); */
 }
 
+.Login-hero {
+  height: 100vh;
+  width: 100vw;
+}
+
 @media all and (min-width: 480px) {
     .Login {
       padding: 160px 0;
@@ -13,4 +18,8 @@
       margin: 0 auto;
       max-width: 320px;
     }
+  }
+
+  button.btn {
+    margin-left: 55px;
   }

@@ -37,6 +37,5 @@ export default {
             url: '/api/conferences',
             data: incomingData
         });
-
     }
 };
