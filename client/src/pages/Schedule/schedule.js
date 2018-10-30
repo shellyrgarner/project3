@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
 
 class Schedule extends Component {
     state = {
@@ -21,11 +23,13 @@ render() {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-                <h1>Keep track of your schedule</h1>
-            </Jumbotron>
+          <Hero imgClass="hero-img4">
+          <h1>Keep track of your schedule</h1>
+        </Hero>
+ 
           </Col>
         </Row>
+        <Footer />
       </Container>
     )
   }

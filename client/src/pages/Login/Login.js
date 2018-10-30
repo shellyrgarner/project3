@@ -6,7 +6,8 @@ import axios from "axios";
 // import { Input, FormBtn } from "../../components/Form";
 import { Input } from "../../components/Form";
 import { withRouter } from "react-router-dom";
-import API from "../../utils/API";
+import Footer from "../../components/Footer";
+import { Container } from "../../components/Grid";
 
 class Login extends Component {
     // constructor(props) {
@@ -139,6 +140,7 @@ class Login extends Component {
                     </div>
                 </div>
             </Hero>
+
         );
     }
 

@@ -6,7 +6,7 @@ import axios from "axios";
 // import { Redirect } from "react-router-dom";
 // import { Input, FormBtn } from "../../components/Form";
 import { Input } from "../../components/Form";
-
+import Footer from "../../components/Footer";
 
 class SignUp extends Component {
     // constructor(props) {
