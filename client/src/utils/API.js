@@ -18,7 +18,6 @@ export default {
             url: '/api/conferences',
             data: incomingData
         });
-
     }
     // getFlightsData: function (url) {
     //     return axios.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/referral/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}/{inboundpartialdate}?apiKey={shortapikey}?shortapikey=ra66933236979928", {

@@ -6,6 +6,7 @@ import axios from "axios";
 // import { Input, FormBtn } from "../../components/Form";
 import { Input } from "../../components/Form";
 import { withRouter } from "react-router-dom";
+import API from "../../utils/API";
 
 class Login extends Component {
     // constructor(props) {
@@ -27,6 +28,10 @@ class Login extends Component {
         this.setState({
             [name]: value
         });
+    }
+    handleRedirect = event => {
+        event.preventDefault();
+        this.props.history.push('/signup')
     }
 
     handleSubmit = event => {
@@ -61,16 +66,27 @@ class Login extends Component {
             console.log("login data: " + data)
             console.log(this.state.email);
             console.log(this.state.password);
+            
 
-            localStorage.setItem('token', data.token);            
+            localStorage.setItem('token', data.token);
 
             this.props.history.push('/conferences');
             location.reload(); // eslint-disable-line
-        } catch (err) {
-            // this.setState({ error: err.response.data.message }); //getting cant set headers error on this 
-            this.setState({ error: err.response}); //getting cant set headers error on this 
-           
         }
+        catch (ex) {
+            if (ex.response && ex.response.status === 400) {
+                const errors = { ...this.state.errors };
+                errors.username = ex.response.data;
+                this.setState({ errors });
+                console.log("error:" + errors.response.data)
+            }
+
+        }
+        //catch (err) {
+        //     // this.setState({ error: err.response.data.message }); //getting cant set headers error on this 
+        //     this.setState({ error: err.response.data}); //getting cant set headers error on this 
+
+        // }
     };
 
 
@@ -114,46 +130,11 @@ class Login extends Component {
                                 blockb="true"
                                 bsSize="large"
                                 type="submit"
-                                onClick={this.handleSubmit}
+                                onClick={this.handleRedirect}
                             >
                                 Sign Up
                             </Button>
 
-                            {/* <form onSubmit={this.handleSubmit}>
-                    <div className="Login"> 
-                        <form onSubmit={this.handleSubmit}>
-                            <FormGroup controlId="email" bsSize="lg">
-                                <ControlLabel>Email</ControlLabel>
-                                <FormControl
-                                    autoFocus
-                                    type="email"
-                                    value={this.state.email}
-                                    onChange={this.handleChange}
-                                />
-                            </FormGroup>
-                            <FormGroup controlId="password" bsSize="lg">
-                                <ControlLabel>Password</ControlLabel>
-                                <FormControl
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                    type="password"
-                                />
-                            </FormGroup>
-                            <Button
-                                blockb="true"
-                                bsSize="large"
-                                // disabled={!this.validateForm()}
-                                type="submit"
-                            >
-                                Login
-                            </Button>
-                            <Button href="/signup"
-                                blockb="true"
-                                bsSize="large"
-                                type="submit"
-                            >
-                                Sign Up
-                            </Button> */}
                         </form>
                     </div>
                 </div>

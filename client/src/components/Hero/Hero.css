@@ -1,10 +1,10 @@
 .hero {
     /* Sizing */
     width: 97vw;
-    height: 95vh;
+    /* height: 95vh; */
     /* width: 100vw; */
     /* height: 100vh; */
-    /* height: auto; */
+    height: auto;
 
     
     /* Flexbox stuff */

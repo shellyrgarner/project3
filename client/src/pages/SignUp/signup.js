@@ -12,16 +12,16 @@ class SignUp extends Component {
     // constructor(props) {
     //     super(props);
 
-        // this.state = {
-           
-        state = {
-            username: "",
-            email: "",
-            password: "",
-            messageFromServer: "",
-            showError: false,
-            registerError: false,
-            loginError: false
+    // this.state = {
+
+    state = {
+        username: "",
+        email: "",
+        password: "",
+        messageFromServer: "",
+        showError: false,
+        registerError: false,
+        loginError: false
         // };
     };
 
@@ -46,84 +46,98 @@ class SignUp extends Component {
                 loginError: false,
                 registerError: true
             });
-        } 
+        }          
         else {
-            console.log(this.state);
-            axios.post('/auth/signup', {
-                email: this.state.email,
-                password: this.state.password,
-                username: this.state.username
-            })
-                .then((response) => localStorage.setItem('token', response.data.token))
-                // console.log("token:" + response.data.token)
-                .catch((error) => console.log('sign up server error: ', error));
+                console.log(this.state);
+                axios.post('/auth/signup', {
+                    email: this.state.email,
+                    password: this.state.password,
+                    username: this.state.username
+                })
+                    .then((response) => localStorage.setItem('token', response.data.token))
+                    // console.log("token:" + response.data.token)
+                    .catch((error) => console.log('sign up server error: ', error));
 
                 this.props.history.push('/conferences');
+            }
         }
-    };
 
-    render() {
-        // const { messageFromServer, showError, loginError, registerError } = this.state;
-        const { showError, loginError, registerError } = this.state;
-        
-        // if (messageFromServer === '') {
-        return (
-            <div className="SignUp">
-                <form>
-                    <Input
-                        placeholder="UserName"
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleChange}
-                    />
-                    <Input
-                        placeholder="Email"
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                    />
-                    <Input
-                        placeholder="Password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                    />
-               
-                    <Button href="/conferences"
+        // try {
+        //     const { data } = axios.post('/auth/signup', {
+        //         email: this.state.email,
+        //         password: this.state.password,
+        //         username: this.state.username
+        //     })                       
+        // localStorage.setItem('token', data.token);
+        //     console.log("signup check!")
+        //     this.props.history.push('/conferences');
+        //     location.reload(); // eslint-disable-line
+        // }
+        // catch (ex) {
+        //     if (ex.response && ex.response.status === 400) {
+        //         const errors = { ...this.state.errors };
+        //         errors.username = ex.response.data;
+        //         this.setState({ errors });
+        //     }
+        // }
+
+        render() {
+            // const { messageFromServer, showError, loginError, registerError } = this.state;
+            const { showError, loginError, registerError } = this.state;
+
+            // if (messageFromServer === '') {
+            return (
+                <div className="SignUp">
+                    <form>
+                        <Input
+                            placeholder="UserName"
+                            name="username"
+                            value={this.state.username}
+                            onChange={this.handleChange}
+                        />
+                        <Input
+                            placeholder="Email"
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                        <Input
+                            placeholder="Password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+
+                        <Button href="/conferences"
                             blockb
                             bsSize="large"
                             // disabled={!this.validateForm()}
                             type="submit"
                             onClick={this.handleSubmit}
-                        > 
+                        >
                             SignUp
                         </Button>
-                    {/* <FormBtn
+                        {/* <FormBtn
                         type="submit"
                         onClick={this.handleSubmit}
                     >
                         SignUp
                     </FormBtn> */}
-                </form>
-                {showError === true &&
-                    registerError === true && (
-                        <div>
-                            <p>Username and password are required fields.</p>
-                        </div>
-                    )}
-                {showError === true &&
-                    loginError === true && (
-                        <div>
-                            <p>That Email is already taken. Please choose another or login.</p>
-                        </div>
-                    )}
-            </div>
-        );
+                    </form>
+                    {showError === true &&
+                        registerError === true && (
+                            <div>
+                                <p>Username and password are required fields.</p>
+                            </div>
+                        )}
+                    {showError === true &&
+                        loginError === true && (
+                            <div>
+                                <p>That Email is already taken. Please choose another or login.</p>
+                            </div>
+                        )}
+                </div>
+            );
+        }
     }
-    // else {
-    //     return <Redirect to={`/conferences`} />;
-
-    // }
-    // }
-}
-export default SignUp;
+    export default SignUp;
