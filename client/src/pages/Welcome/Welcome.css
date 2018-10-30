@@ -2,6 +2,11 @@
     margin-bottom: 10rem;
 }
 
+.Welcome-hero {
+    height: 100vh;
+    width: 100vw;
+}
+
 .Welcome-side-img {
     /* max-width: 500px;
     height: auto; */
