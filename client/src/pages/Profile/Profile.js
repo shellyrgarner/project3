@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./profile.css";
+import Webcam from "react-webcam";
 
 
 class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = { file: '', imagePreviewUrl: '' };
+        this.state = { file: '', imagePreviewUrl: '', camera: [] };
     }
 
     _handleSubmit(e) {
@@ -31,7 +32,19 @@ class Profile extends Component {
         reader.readAsDataURL(file)
     }
 
-    render() {
+    setRef = webcam => {
+        this.webcam = webcam;
+      };
+
+      capture = () => {
+        const videoSrc = this.webcam.getVideo();
+      };
+      
+      render() {
+          
+        const videoConstraints = {
+            facingMode: "user"
+          };
 
         let { imagePreviewUrl } = this.state;
         let $imagePreview = null;
@@ -45,7 +58,7 @@ class Profile extends Component {
         return (
             <Container>
                 <Row>
-                    <Col size="md-12">
+                    <Col size="md-6">
                         <div className="previewComponent">
                             <form onSubmit={(e) => this._handleSubmit(e)}>
                                 <input className="fileInput"
@@ -125,6 +138,10 @@ class Profile extends Component {
                                     </div>
                                 </form>
                             </div></div>
+                    </Col>
+                    <Col size="md-6">
+                        <Webcam width={500} height={550} videoConstraints={videoConstraints}/>
+                        <button onClick={this.capture} style={{textAlign:"center"}}>Start video</button>
                     </Col>
                 </Row>
             </Container>

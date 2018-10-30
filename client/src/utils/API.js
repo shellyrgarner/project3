@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const APIkey = "QTu393xF4qwLbxM61zEb";
+
 export default {
-    search: function(query) {
-            return axios.get("https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wGptpny252qHeFLrjj7yQjvG6KHqXuSn&origin=ATL&destination=" + query)
+    search: function (query) {
+        return axios.get("https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wGptpny252qHeFLrjj7yQjvG6KHqXuSn&origin=ATL&destination=" + query)
     },
     scrapeConferences: function () {
         return axios.get("/api/scrapeconferences");
@@ -13,8 +15,8 @@ export default {
     getConference: function (id) {
         return axios.get("/api/conferences/" + id);
     },
-    
-    
+
+
     scrapeConferences: function () {
         // return axios.get("/api/scrapedconferences");
         return axios.get("/api/conferences");
@@ -22,7 +24,7 @@ export default {
     getConferences: function () {
         return axios.get("/api/conferences");
     },
-    
+
     getConference: function (id) {
         return axios.get("/api/conferences/" + id);
     },

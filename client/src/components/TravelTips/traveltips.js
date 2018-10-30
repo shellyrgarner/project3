@@ -14,8 +14,8 @@ class TravelTips extends Component {
   getFlightsData = (query) => {
     API.search(query)
     .then(res => {
+      console.log(res.data.results);
       this.setState({ results: res.data.results});
-      console.log(res.data.results[0]);
     })
     .catch(err => console.log(err));
   };

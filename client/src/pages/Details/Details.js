@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import RegisterBtn from "../../components/RegisterConfBtn";
+// import RegisterBtn from "../../components/RegisterConfBtn";
 import TravelTips from "../../components/TravelTips";
 
 class Details extends Component {

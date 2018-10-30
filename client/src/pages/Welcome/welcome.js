@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
 import Hero from "../../components/Hero";
 import Footer from "../../components/Footer";
 import "./Welcome.css";

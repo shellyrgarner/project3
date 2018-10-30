@@ -1,7 +1,6 @@
 
 
 import React from 'react';
-import { Grid, Nav, NavItem } from 'react-bootstrap';
 import './Footer.css';
 
 // <footer>

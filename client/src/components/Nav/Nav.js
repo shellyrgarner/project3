@@ -10,7 +10,6 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import logo from '../ca.png'
 
 export default class Example extends React.Component {
   constructor(props) {

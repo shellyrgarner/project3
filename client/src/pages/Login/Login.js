@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./login.css";
 import Hero from "../../components/Hero";
 import axios from "axios";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input } from "../../components/Form";
 
 class Login extends Component {
     constructor(props) {
