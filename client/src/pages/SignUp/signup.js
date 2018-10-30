@@ -1,25 +1,29 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+// import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./signup.css";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+// import { Redirect } from "react-router-dom";
+// import { Input, FormBtn } from "../../components/Form";
+import { Input } from "../../components/Form";
 import Footer from "../../components/Footer";
 
 class SignUp extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
-            username: "",
-            email: "",
-            password: "",
-            messageFromServer: "",
-            showError: false,
-            registerError: false,
-            loginError: false
-        };
-    }
+    // this.state = {
+
+    state = {
+        username: "",
+        email: "",
+        password: "",
+        messageFromServer: "",
+        showError: false,
+        registerError: false,
+        loginError: false
+        // };
+    };
 
     // validateForm() {
     //     return this.state.username.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
@@ -42,23 +46,46 @@ class SignUp extends Component {
                 loginError: false,
                 registerError: true
             });
-        } else {
-            console.log(this.state);
-            axios.post('/auth/signup', {
-                email: this.state.email,
-                password: this.state.password,
-                username: this.state.username
-            })
-                .then((response) => localStorage.setItem('token', response.data.token))
-                // console.log("token:" + response.data.token)
-                .catch((error) => console.log('sign up server error: ', error));
+        }          
+        else {
+                console.log(this.state);
+                axios.post('/auth/signup', {
+                    email: this.state.email,
+                    password: this.state.password,
+                    username: this.state.username
+                })
+                    .then((response) => localStorage.setItem('token', response.data.token))
+                    // console.log("token:" + response.data.token)
+                    .catch((error) => console.log('sign up server error: ', error));
 
+                this.props.history.push('/conferences');
+            }
         }
-    };
 
-    render() {
-        const { messageFromServer, showError, loginError, registerError } = this.state;
-        if (messageFromServer === '') {
+        // try {
+        //     const { data } = axios.post('/auth/signup', {
+        //         email: this.state.email,
+        //         password: this.state.password,
+        //         username: this.state.username
+        //     })                       
+        // localStorage.setItem('token', data.token);
+        //     console.log("signup check!")
+        //     this.props.history.push('/conferences');
+        //     location.reload(); // eslint-disable-line
+        // }
+        // catch (ex) {
+        //     if (ex.response && ex.response.status === 400) {
+        //         const errors = { ...this.state.errors };
+        //         errors.username = ex.response.data;
+        //         this.setState({ errors });
+        //     }
+        // }
+
+        render() {
+            // const { messageFromServer, showError, loginError, registerError } = this.state;
+            const { showError, loginError, registerError } = this.state;
+
+            // if (messageFromServer === '') {
             return (
                 <div className="SignUp">
                     <form>
@@ -80,6 +107,7 @@ class SignUp extends Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
+
                         <Button href="/conferences"
                             blockb
                             bsSize="large"
@@ -90,10 +118,11 @@ class SignUp extends Component {
                             SignUp
                         </Button>
                         {/* <FormBtn
-                            onClick={this.handleSubmit}
-                        >
-                            Submit Event
-                        </FormBtn> */}
+                        type="submit"
+                        onClick={this.handleSubmit}
+                    >
+                        SignUp
+                    </FormBtn> */}
                     </form>
                     {showError === true &&
                         registerError === true && (
@@ -109,10 +138,6 @@ class SignUp extends Component {
                         )}
                 </div>
             );
-        } else {
-            return <Redirect to={`/conferences`} />;
-
         }
     }
-}
-export default SignUp;
+    export default SignUp;

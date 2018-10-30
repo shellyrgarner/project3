@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", { us
 const userSeed = [
     {
         username: 'Tester',
-        email: 'test@hotmail.com',
+        email: 'test@testmail.com',
         password: 'test'
     },
     {
