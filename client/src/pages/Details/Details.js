@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+// import RegisterBtn from "../../components/RegisterConfBtn";
+import TravelTips from "../../components/TravelTips";
 import RegisterBtn from "../../components/RegisterConfBtn";
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
@@ -72,6 +74,7 @@ class Details extends Component {
                         <p> <strong>{this.state.count} Attending!</strong> </p>
                     </Col>
                 </Row>
+                <TravelTips />
                 <Footer />
             </Container>
         );

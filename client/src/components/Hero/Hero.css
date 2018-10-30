@@ -50,9 +50,14 @@
         display: block;
 
         margin-top: 50px !important;
-        margin-left: 10px;
+        
 }
-h1,.h1,h2 {    
+
+.hero-inner {
+    width: 500px;
+}
+
+h1,.h1 {    
     /* Text styles */
     text-align: center;
     /* color: rgb(245, 236, 236) !important; */

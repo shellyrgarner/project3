@@ -1,20 +1,9 @@
 import React from "react";
+import { Collapse, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarToggler, UncontrolledDropdown } from 'reactstrap';
+import logo from '../cv.png';
 import "./nav.css";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
-import logo from '../cv.png'
 
+ 
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +34,13 @@ export default class Example extends React.Component {
               </NavItem>
               {/* <NavItem>
                 <NavLink href="/conferences/:id">Schedule</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/profile">Profile</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/signout">Sign Out</NavLink>
+              </NavItem>
               </NavItem> */}
 
               {/* <NavItem>

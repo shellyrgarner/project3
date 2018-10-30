@@ -1,7 +1,11 @@
 import axios from "axios";
-// require ("dotenv").config();
+
+const APIkey = "QTu393xF4qwLbxM61zEb";
 
 export default {
+    search: function (query) {
+        return axios.get("https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wGptpny252qHeFLrjj7yQjvG6KHqXuSn&origin=ATL&destination=" + query)
+    },
     scrapeConferences: function () {
         return axios.get("/api/scrapeconferences");
     },
@@ -11,21 +15,27 @@ export default {
     getConference: function (id) {
         return axios.get("/api/conferences/" + id);
     },
-    postConference: function (incomingData) {
 
+
+    scrapeConferences: function () {
+        // return axios.get("/api/scrapedconferences");
+        return axios.get("/api/conferences");
+    },
+    getConferences: function () {
+        return axios.get("/api/conferences");
+    },
+
+    getConference: function (id) {
+        return axios.get("/api/conferences/" + id);
+    },
+
+    postConference: function (incomingData) {
+        //TODO: write an axos.post that takes the data object we get from a react component
+        //and sends it to our api
         return axios({
             method: 'post',
             url: '/api/conferences',
             data: incomingData
         });
     }
-    // getFlightsData: function (url) {
-    //     return axios.get("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/referral/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}/{inboundpartialdate}?apiKey={shortapikey}?shortapikey=ra66933236979928", {
-    //         headers: {
-    //             "Content-Type": "application/x-www-form-urlencoded",
-    //             "X-Mashape-Key": "Zj36taXTnmmshyDZAbkyZDwF8XsTp1HAOkWjsnajJKHRB1tMjZ",
-    //             "X-Mashape-Host": "skyscanner-skyscanner-flight-search-v1.p.mashape.com",
-    //         },
-    //     });
-    // },
 };

@@ -9,14 +9,6 @@ const PORT = process.env.PORT || 3001;
 // const expressSession = require('express-session');
 // const cookieParser = require('cookie-parser');
 
-// app.use(cookieParser());
-// app.use(expressSession({secret: 'mySecretKey'}));
-// app.use(passport.initialize());
-// app.use(passport.session());
-// require("dotenv").config();
-
-//console.log(process.env.REACT_APP_SABRE_TOKEN)
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
