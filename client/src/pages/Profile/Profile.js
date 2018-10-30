@@ -147,7 +147,7 @@ class Profile extends Component {
                             screenshotFormat="image/webp"
                             videoConstraints={videoConstraints}
                         />
-                        <button onClick={this.screenshot.bind(this)}>Take a photo</button>
+                        <button style={{backgroundColor:"red", borderRadius:"15px", padding:"15px"}}onClick={this.screenshot.bind(this)}>Take a photo</button>
                         {this.state.screenshot ? <img src={this.state.screenshot} /> : null }
                        
                     </Col>
