@@ -10,6 +10,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import logo from '../ca.png'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -29,10 +30,13 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar light expand="md">
-          <NavbarBrand href="#">CONVENE!</NavbarBrand>
+          <NavbarBrand href="#">{/* <img src={logo} alt="logo"/> */}</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem>
+                <NavLink href="/login">Login</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink href="/conferences">Conferences</NavLink>
               </NavItem>

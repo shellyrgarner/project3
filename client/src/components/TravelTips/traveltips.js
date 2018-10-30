@@ -7,7 +7,7 @@ class TravelTips extends Component {
 
   state = {
     search: "",
-    results: [],
+    results: []
   };
 
 
@@ -44,14 +44,15 @@ class TravelTips extends Component {
           handleInputChange={this.handleInputChange}
         />
         
-        {this.state.results.map(data => {
+        {this.state.results.map( results => {
           return (
           <div>
             <Container>
               <Row>
                 <Col>
                   <ul>
-                    <li>data: {data.data}</li>
+                    {console.log(results.data.results)}
+                    <li>data: </li>
                   </ul>
                 </Col>
               </Row>

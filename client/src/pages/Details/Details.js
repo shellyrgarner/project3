@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import RegisterBtn from "../../components/RegisterConfBtn";
 import TravelTips from "../../components/TravelTips";
 
 class Details extends Component {
@@ -17,6 +18,22 @@ class Details extends Component {
             .then(res => this.setState({ conference: res.data }))
             .catch(err => console.log(err));
     }
+
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+        // if (this.state.event && this.state.location) {
+        //   API.postConference({
+        //     event: this.state.event,
+        //     beginDate: this.state.beginDate,
+        //     endDate: this.state.endDate,
+        //     venue: this.state.venue,
+        //     location: this.state.location,
+        //     info: this.state.info
+        //   })
+        //     .then(res => this.loadConferences())
+            // .catch(err => console.log("handleformsubmit ERROR: " + err));
+        // }
+      
 
     render() {
         return (
