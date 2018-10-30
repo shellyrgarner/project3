@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Conferences from "./pages/Conferences";
-import TravelTips from "./pages/TravelTips";
+import TravelTips from "./pages/TravelTips/traveltips";
 import Nav from "./components/Nav";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
