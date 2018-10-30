@@ -34,17 +34,19 @@ class Profile extends Component {
 
     setRef = webcam => {
         this.webcam = webcam;
-      };
+    };
 
-      capture = () => {
-        const videoSrc = this.webcam.getVideo();
-      };
-      
-      render() {
-          
+    capture = () => {
+        const imageSrc = this.webcam.getScreenshot();
+    };
+
+    render() {
+
         const videoConstraints = {
+            width: 1280,
+            height: 720,
             facingMode: "user"
-          };
+        };
 
         let { imagePreviewUrl } = this.state;
         let $imagePreview = null;
@@ -140,8 +142,15 @@ class Profile extends Component {
                             </div></div>
                     </Col>
                     <Col size="md-6">
-                        <Webcam width={500} height={550} videoConstraints={videoConstraints}/>
-                        <button onClick={this.capture} style={{textAlign:"center"}}>Start video</button>
+                        <Webcam
+                            audio={false}
+                            height={500}
+                            width={550}
+                            ref={this.setRef}
+                            screenshotFormat="image/webp"
+                            videoConstraints={videoConstraints}
+                        />
+                        <button onClick={this.capture}>Take a photo</button>
                     </Col>
                 </Row>
             </Container>
