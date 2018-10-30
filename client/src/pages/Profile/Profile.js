@@ -7,7 +7,7 @@ import Webcam from "react-webcam";
 class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = { file: '', imagePreviewUrl: '', camera: [] };
+        this.state = { file: '', imagePreviewUrl: '', screenshot: null };
     }
 
     _handleSubmit(e) {
@@ -32,13 +32,10 @@ class Profile extends Component {
         reader.readAsDataURL(file)
     }
 
-    setRef = webcam => {
-        this.webcam = webcam;
-    };
-
-    capture = () => {
-        const imageSrc = this.webcam.getScreenshot();
-    };
+    screenshot = () => {
+        const screenshot = this.refs.webcam.getScreenshot();
+        this.setState({screenshot: screenshot});
+    }
 
     render() {
 
@@ -143,19 +140,21 @@ class Profile extends Component {
                     </Col>
                     <Col size="md-6">
                         <Webcam
+                            ref="webcam"
                             audio={false}
                             height={500}
                             width={550}
-                            ref={this.setRef}
                             screenshotFormat="image/webp"
                             videoConstraints={videoConstraints}
                         />
-                        <button onClick={this.capture}>Take a photo</button>
+                        <button onClick={this.screenshot.bind(this)}>Take a photo</button>
+                        {this.state.screenshot ? <img src={this.state.screenshot} /> : null }
+                       
                     </Col>
                 </Row>
             </Container>
 
-        );
+        )
     }
 }
 
